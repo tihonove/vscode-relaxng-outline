@@ -27,10 +27,13 @@ exports.activate = function activate(context) {
         getTreeItem: e => currentTreeViewProvider?.getTreeItem(e),
     };
 
-    vscode.window.registerTreeDataProvider("relaxng-outline.relaxNGOutline", treeViewProvider);
+    vscode.window.createTreeView("relaxng-outline.relaxNGOutline", {
+        treeDataProvider: treeViewProvider,
+        showCollapseAll: true,
+    });
     vscode.window.onDidChangeActiveTextEditor(debounce(syncronizedEditorWithOutline, 200));
     vscode.workspace.onDidChangeTextDocument(debounce(() => syncronizedEditorWithOutline(true), 700));
-    
+
     vscode.commands.registerCommand("relaxng-outline.refreshOutline", () => {
         syncronizedEditorWithOutline();
     });
@@ -46,15 +49,14 @@ exports.activate = function activate(context) {
         syncronizedEditorWithOutline();
     });
 
-    vscode.commands.registerCommand("relaxng-outline.copyRngNodePath", (rngNode) => {
-        if (rngNode.fullPath)
-            vscode.env.clipboard.writeText(rngNode.fullPath);
+    vscode.commands.registerCommand("relaxng-outline.copyRngNodePath", rngNode => {
+        if (rngNode.fullPath) vscode.env.clipboard.writeText(rngNode.fullPath);
         syncronizedEditorWithOutline();
     });
 
     vscode.commands.registerCommand("relaxng-outline.openRngNode", async rngNode => {
         let editor;
-        if (isTreeContentPinned) { 
+        if (isTreeContentPinned) {
             const document = vscode.workspace.openTextDocument(currentDocumentUri);
             editor = await vscode.window.showTextDocument(document, { preview: false, preserveFocus: false });
         } else {
@@ -154,7 +156,9 @@ class DocumentTreeViewProvider {
                         ? vscode.TreeItemCollapsibleState.Expanded
                         : vscode.TreeItemCollapsibleState.None,
                 description: description ?? "",
-                tooltip: new vscode.MarkdownString(`#### Type ${(rngNode.base ? ` : ${rngNode.base}` : "")}\n\n${description ?? ""}`),
+                tooltip: new vscode.MarkdownString(
+                    `#### Type ${rngNode.base ? ` : ${rngNode.base}` : ""}\n\n${description ?? ""}`
+                ),
                 iconPath:
                     rngNode.base === "string"
                         ? new vscode.ThemeIcon("symbol-string")
