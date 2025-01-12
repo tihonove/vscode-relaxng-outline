@@ -25,4 +25,4 @@ jobs:
             - name: Publish Extension
               env:
                   VSCE_PAT: ${{ secrets.VSCE_PAT }}
-              run: vsce publish --no-git-tag-version --pre-release
+              run: vsce publish --no-git-tag-version
