@@ -3,7 +3,7 @@
 	"displayName": "RelaxNG outline",
 	"description": "Display outline for RelaxNG files",
 	"publisher": "tihonove",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"license": "MIT",
 	"engines": {
 		"vscode": "^1.74.0"
@@ -12,10 +12,7 @@
 		"type": "git",
 		"url": "https://github.com/tihonove/vscode-relaxng-outline.git"
 	},
-	"extensionKind": [
-		"ui",
-		"workspace"
-	],
+	"extensionKind": ["ui"],
 	"categories": [
 		"Visualization"
 	],
