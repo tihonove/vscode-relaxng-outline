@@ -5,6 +5,7 @@ exports.activate = function activate(context) {
     const didChangeTreeDataEmitter = new vscode.EventEmitter();
     let isRelaxNG = false;
     let isTreeContentPinned = false;
+    let showOnErrorTreeViewProvider = null;
     let currentTreeViewProvider = null;
     let currentDocumentUri = null;
 
@@ -13,8 +14,13 @@ exports.activate = function activate(context) {
         getChildren: e => {
             if (currentTreeViewProvider == null && isRelaxNG) {
                 const text = vscode.window.activeTextEditor?.document.getText();
-                currentTreeViewProvider = new DocumentTreeViewProvider(parseRng(text));
-                didChangeTreeDataEmitter.fire();
+                try {
+                    currentTreeViewProvider = new DocumentTreeViewProvider(parseRng(text));
+                    showOnErrorTreeViewProvider = currentTreeViewProvider;
+                    didChangeTreeDataEmitter.fire();
+                } catch (error) {
+                    currentTreeViewProvider = showOnErrorTreeViewProvider;
+                }
             }
             return currentTreeViewProvider?.getChildren(e) ?? [];
         },
@@ -23,7 +29,7 @@ exports.activate = function activate(context) {
 
     vscode.window.registerTreeDataProvider("relaxng-outline.relaxNGOutline", treeViewProvider);
     vscode.window.onDidChangeActiveTextEditor(debounce(syncronizedEditorWithOutline, 200));
-    vscode.workspace.onDidChangeTextDocument(debounce(syncronizedEditorWithOutline, 700));
+    vscode.workspace.onDidChangeTextDocument(debounce(() => syncronizedEditorWithOutline(true), 700));
     
     vscode.commands.registerCommand("relaxng-outline.refreshOutline", () => {
         syncronizedEditorWithOutline();
@@ -63,7 +69,7 @@ exports.activate = function activate(context) {
         }
     });
 
-    function syncronizedEditorWithOutline() {
+    function syncronizedEditorWithOutline(doNotResetPreviousContent = false) {
         if (isTreeContentPinned) {
             return;
         }
@@ -74,6 +80,9 @@ exports.activate = function activate(context) {
             activeTextEditor?.document.languageId === "xml" &&
             activeTextEditor?.document.getText().includes("<element");
         vscode.commands.executeCommand("setContext", "relaxng-outline.relaxNGOutlineEnabled", isRelaxNG);
+        if (!doNotResetPreviousContent) {
+            showOnErrorTreeViewProvider = null;
+        }
         currentTreeViewProvider = null;
         if (isRelaxNG) {
             currentDocumentUri = activeTextEditor.document.uri;
@@ -100,6 +109,7 @@ class DocumentTreeViewProvider {
     getChildren(rngNode) {
         if (!rngNode) return this.parsedRngRoot.elements;
         if (rngNode.type == "element") return [...(rngNode.attributes ?? []), ...(rngNode.elements ?? [])];
+        if (rngNode.type == "choice") return [...(rngNode.attributes ?? []), ...(rngNode.elements ?? [])];
         if (rngNode.type == "attribute") return [rngNode.dataType];
         if (rngNode.type == "type") return rngNode.constraints;
     }
@@ -116,6 +126,13 @@ class DocumentTreeViewProvider {
                 tooltip: new vscode.MarkdownString("#### " + rngNode.name + "\n\n" + (description ?? "")),
                 iconPath: multiple ? new vscode.ThemeIcon("symbol-array") : new vscode.ThemeIcon("symbol-object"),
                 contextValue: "relaxng-outline.rngNode.hasPath",
+            };
+        } else if (rngNode.type === "choice") {
+            return {
+                label: "choice",
+                collapsibleState: vscode.TreeItemCollapsibleState.Expanded,
+                iconPath: new vscode.ThemeIcon("type-hierarchy"),
+                contextValue: "relaxng-outline.rngNode",
             };
         } else if (rngNode.type === "attribute") {
             const description = rngNode.properties["description"];
@@ -137,7 +154,7 @@ class DocumentTreeViewProvider {
                         ? vscode.TreeItemCollapsibleState.Expanded
                         : vscode.TreeItemCollapsibleState.None,
                 description: description ?? "",
-                tooltip: description,
+                tooltip: new vscode.MarkdownString(`#### Type ${(rngNode.base ? ` : ${rngNode.base}` : "")}\n\n${description ?? ""}`),
                 iconPath:
                     rngNode.base === "string"
                         ? new vscode.ThemeIcon("symbol-string")
@@ -165,7 +182,6 @@ class DocumentTreeViewProvider {
                 label: rngNode.name,
                 collapsibleState: vscode.TreeItemCollapsibleState.None,
                 description: value,
-                tooltip: description + "\n" + value,
                 iconPath:
                     rngNode.name === "enum"
                         ? new vscode.ThemeIcon("symbol-enum")
@@ -181,7 +197,7 @@ class DocumentTreeViewProvider {
         }
         return {
             label: rngNode.name,
-            collapsibleState: vscode.TreeItemCollapsibleState.None,
+            collapsibleState: vscode.TreeItemCollapsibleState.Expanded,
             contextValue: "relaxng-outline.rngNode",
         };
     }

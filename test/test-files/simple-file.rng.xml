@@ -3,4 +3,8 @@
     <attribute name="a">
         <type base="string" />
     </attribute>
+    <choice>
+        <element name="B" />
+        <element name="X" />
+    </choice>
 </element>

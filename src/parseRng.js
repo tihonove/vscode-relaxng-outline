@@ -10,7 +10,13 @@ exports.parseRng = function parseRng(xml) {
         if (node.name === "element") {
             const element = {
                 type: "element",
-                fullPath: stack.map(x => x.name).join("/") + "/" + node.attributes.name,
+                fullPath:
+                    stack
+                        .filter(x => x.type === "element")
+                        .map(x => x.name)
+                        .join("/") +
+                    "/" +
+                    node.attributes.name,
                 name: node.attributes.name,
                 elements: [],
                 attributes: [],
@@ -24,13 +30,29 @@ exports.parseRng = function parseRng(xml) {
             const attribute = {
                 type: "attribute",
                 name: node.attributes.name,
-                fullPath: stack.map(x => x.name).join("/") + "/@" + node.attributes.name,
+                fullPath:
+                    stack
+                        .filter(x => x.type === "element")
+                        .map(x => x.name)
+                        .join("/") +
+                    "/@" +
+                    node.attributes.name,
                 position: { line: parser.line, column: parser.column },
                 properties: node.attributes,
                 dataType: undefined,
             };
             if (top().attributes != undefined) top().attributes.push(attribute);
             stack.push(attribute);
+        } else if (node.name === "choice") {
+            const node = {
+                type: "choice",
+                name: "choice",
+                elements: [],
+                attributes: [],
+                position: { line: parser.line, column: parser.column },
+            };
+            if (top().elements != undefined) top().elements.push(node);
+            stack.push(node);
         } else if (node.name === "type") {
             const typeNode = {
                 type: "type",
@@ -63,8 +85,7 @@ exports.parseRng = function parseRng(xml) {
     };
 
     parser.onerror = err => {
-        console.error("Parsing error:", err.message);
-        parser.resume();
+        throw err;
     };
 
     parser.write(xml).close();
