@@ -1,8 +1,6 @@
 const { parseRng } = require("../src/parseRng.js");
 const fs = require("fs");
-const { type } = require("os");
 const path = require("path");
-const { fileURLToPath } = require("url");
 
 describe("RelaxNG Parser", () => {
     test("Minimal example", () => {
