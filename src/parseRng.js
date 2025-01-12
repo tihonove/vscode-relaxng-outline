@@ -10,7 +10,7 @@ exports.parseRng = function parseRng(xml) {
         if (node.name === "element") {
             const element = {
                 type: "element",
-                fullPath: stack.map(x => x.name).join("/"),
+                fullPath: stack.map(x => x.name).join("/") + "/" + node.attributes.name,
                 name: node.attributes.name,
                 elements: [],
                 attributes: [],
