@@ -20,8 +20,7 @@ exports.parseRng = function parseRng(xml) {
             top().elements ??= [];
             top().elements.push(element);
             stack.push(element);
-        }
-        else if (node.name === "attribute") {
+        } else if (node.name === "attribute") {
             const attribute = {
                 type: "attribute",
                 name: node.attributes.name,
@@ -30,8 +29,7 @@ exports.parseRng = function parseRng(xml) {
                 properties: node.attributes,
                 dataType: undefined,
             };
-            if (top().attributes != undefined)
-                top().attributes.push(attribute);
+            if (top().attributes != undefined) top().attributes.push(attribute);
             stack.push(attribute);
         } else if (node.name === "type") {
             const typeNode = {
@@ -51,8 +49,7 @@ exports.parseRng = function parseRng(xml) {
                 position: { line: parser.line, column: parser.column },
                 properties: node.attributes,
             };
-            if (top().constraints)
-                top().constraints.push(constraint);
+            if (top().constraints) top().constraints.push(constraint);
             stack.push(constraint);
         } else {
             stack.push({ name: node.name });
@@ -72,4 +69,4 @@ exports.parseRng = function parseRng(xml) {
 
     parser.write(xml).close();
     return root;
-}
+};
