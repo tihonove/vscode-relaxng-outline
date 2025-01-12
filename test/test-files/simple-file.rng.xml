@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<element name="A">
+    <attribute name="a">
+        <type base="string" />
+    </attribute>
+</element>

@@ -1,0 +1,698 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<element name="Файл" description="Файл обмена">
+  <attribute name="ИдФайл" description="Идентификатор файла. Содержит (повторяет) имя сформированного файла (без расширения)">
+    <type base="string">
+      <maxLength value="255" />
+      <minLength value="1" />
+    </type>
+  </attribute>
+  <attribute name="ВерсПрог" description="Версия программы, с помощью которой сформирован файл">
+    <type base="string">
+      <maxLength value="40" />
+      <minLength value="1" />
+    </type>
+  </attribute>
+  <attribute name="ВерсФорм" description="Версия формата">
+    <type base="string">
+      <maxLength value="5" />
+      <minLength value="1" />
+      <enumeration value="5.02" />
+    </type>
+  </attribute>
+  <element name="Документ" description="Состав и структура документа">
+    <attribute name="КНД" description="Код формы отчетности по КНД">
+      <type base="string">
+        <length value="7" />
+        <pattern value="[0-9]{7}" />
+        <enumeration value="1150085" />
+      </type>
+    </attribute>
+    <attribute name="ДатаДок" description="Дата формирования документа. Дата в формате ДД.ММ.ГГГГ">
+      <type base="string">
+        <length value="10" />
+        <pattern value="((((0[1-9]{1}|1[0-9]{1}|2[0-8]{1})\.(0[1-9]{1}|1[0-2]{1}))|((29|30)\.(01|0[3-9]{1}|1[0-2]{1}))|(31\.(01|03|05|07|08|10|12)))\.((19|20)[0-9]{2}))|(29\.02\.((19|20)(((0|2|4|6|8)(0|4|8))|((1|3|5|7|9)(2|6)))))" />
+      </type>
+    </attribute>
+    <attribute name="НомКорр" description="Номер корректировки. Принимает значение: 0 – первичный документ, 1 – 999 – номер корректировки для корректирующего документа">
+      <type base="integer">
+        <totalDigits value="3" />
+      </type>
+    </attribute>
+    <attribute name="КодНО" description="Код налогового органа">
+      <type base="string">
+        <length value="4" />
+        <pattern value="[0-9]{4}" />
+      </type>
+    </attribute>
+    <element name="СвНП" description="Сведения о международной компании (организации, указанной в пункте 1.1 статьи 24.2 Налогового кодекса Российской Федерации (далее - организации, указанной в пункте 1.1 статьи 24.2 Кодекса))">
+      <element name="НПЮЛ" description="Международная компания (организация, указанная в пункте 1.1 статьи 24.2 Кодекса)">
+        <attribute name="НаимОрг" description="Полное наименование международной компании (организации, указанной в пункте 1.1 статьи 24.2 Кодекса)">
+          <type base="string">
+            <maxLength value="1000" />
+            <minLength value="1" />
+          </type>
+        </attribute>
+        <attribute name="ИННЮЛ" description="ИНН">
+          <type base="string">
+            <length value="10" />
+            <pattern value="([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{8}" />
+          </type>
+        </attribute>
+        <attribute name="КПП" description="КПП">
+          <type base="string">
+            <length value="9" />
+            <pattern value="([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})([0-9]{2})([0-9A-Z]{2})([0-9]{3})" />
+          </type>
+        </attribute>
+        <attribute name="ОГРН" description="ОГРН">
+          <type base="string">
+            <length value="13" />
+            <pattern value="[0-9]{13}" />
+          </type>
+        </attribute>
+      </element>
+    </element>
+    <element name="Подписант" description="Сведения о лице, подписавшем документ">
+      <attribute name="ПрПодп" description="Признак лица, подписавшего документ">
+        <type base="string">
+          <length value="1" />
+          <enumeration value="1" />
+          <enumeration value="2" />
+        </type>
+      </attribute>
+      <element name="ФИО_рук" description="Фамилия, имя, отчество">
+        <attribute name="Фамилия" description="Фамилия">
+          <type base="string">
+            <maxLength value="60" />
+            <minLength value="1" />
+          </type>
+        </attribute>
+        <attribute name="Имя" description="Имя">
+          <type base="string">
+            <maxLength value="60" />
+            <minLength value="1" />            
+          </type>
+        </attribute>
+        <attribute name="Отчество" optional="true" description="Отчество">
+          <type base="string">
+            <maxLength value="60" />
+            <minLength value="1" />
+          </type>
+        </attribute>
+      </element>
+      <element name="ФИО_нерук" description="Фамилия, имя, отчество">
+        <attribute name="Фамилия" description="Фамилия">
+          <type base="string">
+            <maxLength value="60" />
+            <minLength value="1" />
+          </type>
+        </attribute>
+        <attribute name="Имя" description="Имя">
+          <type base="string">
+            <maxLength value="60" />
+            <minLength value="1" />
+          </type>
+        </attribute>
+        <attribute name="Отчество" optional="true" description="Отчество">
+          <type base="string">
+            <maxLength value="60" />
+            <minLength value="1" />
+          </type>
+        </attribute>
+      </element>
+      <element name="СвПред" optional="true" description="Сведения о представителе организации">
+        <attribute name="НаимДок" description="Наименование и реквизиты документа, подтверждающего полномочия представителя">
+          <type base="string">
+            <maxLength value="120" />
+            <minLength value="1" />
+          </type>
+        </attribute>
+      </element>
+    </element>    
+    <element name="СвКонтрЛицМК" multiple="true" description="Сведения о контролирующих лицах международной компании">
+      <element name="СвКонтрЛиц" description="Сведения о контролирующем лице">
+        <attribute name="control_face" editorOnly="true" description="Укажите значение">
+          <type base="string"/>
+        </attribute>
+        <choice>
+          <element name="СвИОКонтрЛиц" description="Сведения об иностранной организации, являющейся контролирующим лицом">
+            <attribute name="НомерКонтрЛиц" description="Номер контролирующего лица">
+              <type base="string" description="Принимает значение в виде ИО-NNNNN, где NNNNN – пятизначный порядковый номер">
+                <length value="8" />
+                <pattern value="ИО-[0-9]{5}" />
+              </type>
+            </attribute>
+            <attribute name="НаимОрг" description="Полное наименование организации (в русской транскрипции)">
+              <type base="string">
+                <maxLength value="1000" />
+                <minLength value="1" />
+              </type>
+            </attribute>
+            <attribute name="НаимОргЛат" description="Полное наименование организации (в латинской транскрипции)">
+              <type base="string">
+                <maxLength value="1000" />
+                <minLength value="1" />
+              </type>
+            </attribute>
+            <attribute name="СтрРег" description="Код государства (территории) регистрации (инкорпорации)">
+              <type base="string">
+                <length value="3" />
+                <pattern value="[0-9]{3}" />
+              </type>
+            </attribute>
+            <attribute name="РегНомер" optional="true" description="Регистрационный номер (номера) в государстве (на территории) регистрации (инкорпорации) или его аналог">
+              <type base="string">
+                <maxLength value="100" />
+                <minLength value="1" />
+              </type>
+            </attribute>
+            <attribute name="КодНПРег" optional="true" description="Код (коды) налогоплательщика в государстве (на территории) регистрации (инкорпорации) или его аналог">
+              <type base="string">
+                <maxLength value="100" />
+                <minLength value="1" />
+              </type>
+            </attribute>
+            <attribute name="АдрСтрРег" optional="true" description="Адрес в государстве (на территории) регистрации (инкорпорации)">
+              <type base="string">
+                <maxLength value="254" />
+                <minLength value="1" />
+              </type>
+            </attribute>
+          </element>
+          <element name="СвРосОКонтрЛиц" description="Сведения о российской организации, являющейся контролирующим лицом">
+            <attribute name="НомерКонтрЛиц" description="Номер контролирующего лица">
+              <type base="string" description="Принимает значение в виде РО-NNNNN, где NNNNN – пятизначный порядковый номер">
+                <length value="8" />
+                <pattern value="РО-[0-9]{5}" />
+              </type>
+            </attribute>
+            <attribute name="ОГРН" description="ОГРН">
+              <type base="string">
+                <length value="13" />
+                <pattern value="[0-9]{13}" />
+              </type>
+            </attribute>
+            <attribute name="ИННЮЛ" description="ИНН">
+              <type base="string">
+                <length value="10" />
+                <pattern value="([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{8}" />
+              </type>
+            </attribute>
+            <attribute name="КПП" description="КПП">
+              <type base="string">
+                <length value="9" />
+                <pattern value="([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})([0-9]{2})([0-9A-Z]{2})([0-9]{3})" />
+              </type>
+            </attribute>
+            <attribute name="НаимОрг" description="Полное наименование организации">
+              <type base="string">
+                <maxLength value="1000" />
+                <minLength value="1" />
+              </type>
+            </attribute>
+          </element>
+          <element name="СвФЛКонтрЛиц" description="Сведения о физическом лице, являющемся контролирующим лицом">
+            <attribute name="НомерКонтрЛиц" description="Номер контролирующего физического лица">
+              <type base="string" description="Принимает значение в виде ФЛ-NNNNN, где NNNNN – пятизначный порядковый номер">
+                <length value="8" />
+                <pattern value="ФЛ-[0-9]{5}" />
+              </type>
+            </attribute>
+            <attribute name="ИННФЛ" optional="true" description="ИНН в Российской Федерации">
+              <type base="string">
+                <length value="12" />
+                <pattern value="([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{10}" />
+              </type>
+            </attribute>
+            <attribute name="ПрГражд" description="Гражданство">
+              <type base="string" description="Выберите один из вариантов">
+                <length value="1" />
+                <enumeration value="1" />
+                <enumeration value="2" />
+                <enumeration value="3" />
+              </type>
+            </attribute>
+            <attribute name="ОКСМ" optional="true" description="Код страны по классификатору ОКСМ">
+              <type base="string">
+                <length value="3" />
+                <pattern value="[0-9]{3}" />
+              </type>
+            </attribute>
+            <attribute name="Пол" description="Пол">
+              <type base="string" description="Выберите один из вариантов">
+                <length value="1" />
+                <enumeration value="1" />
+                <enumeration value="2" />
+              </type>
+            </attribute>
+            <attribute name="ДатаРожд" description="Дата рождения">
+              <type base="string" description="Такой даты не существует" requiredDescription="Поле должно быть заполнено">
+                <length value="10" />
+                <pattern value="((((0[1-9]{1}|1[0-9]{1}|2[0-8]{1})\.(0[1-9]{1}|1[0-2]{1}))|((29|30)\.(01|0[3-9]{1}|1[0-2]{1}))|(31\.(01|03|05|07|08|10|12)))\.((19|20)[0-9]{2}))|(29\.02\.((19|20)(((0|2|4|6|8)(0|4|8))|((1|3|5|7|9)(2|6)))))" />
+              </type>
+            </attribute>
+            <attribute name="МестоРожд" description="Место рождения">
+              <type base="string">
+                <maxLength value="128" />
+                <minLength value="1" />
+              </type>
+            </attribute>
+            <attribute name="КодФЛНПРег" optional="true" description="Код (коды) физического лица в качестве налогоплательщика в государстве (на территории) регистрации или аналог (для иностранного гражданина)">
+              <type base="string">
+                <maxLength value="100" />
+                <minLength value="1" />
+              </type>
+            </attribute>
+            <attribute name="СтрРегФЛ" optional="true" description="Код государства (территории) регистрации в качестве налогоплательщика (для иностранного гражданина)">
+              <type base="string">
+                <length value="3" />
+                <pattern value="[0-9]{3}" />
+              </type>
+            </attribute>
+            <element name="ФИО" description="Фамилия, имя, отчество физического лица">
+              <attribute name="Фамилия" description="Фамилия">
+                <type base="string">
+                  <maxLength value="60" />
+                  <minLength value="1" />
+                </type>
+              </attribute>
+              <attribute name="Имя" description="Имя">
+                <type base="string">
+                  <maxLength value="60" />
+                  <minLength value="1" />
+                </type>
+              </attribute>
+              <attribute name="Отчество" optional="true" description="Отчество">
+                <type base="string">
+                  <maxLength value="60" />
+                  <minLength value="1" />
+                </type>
+              </attribute>
+            </element>
+            <element name="УдЛичнФЛ" description="Сведения о документе, удостоверяющем личность">
+              <attribute name="КодВидДок" description="Код вида документа, удостоверяющего личность">
+                <type base="string">
+                  <length value="2" />
+                  <pattern value="[0-9]{2}" />
+                </type>
+              </attribute>
+              <attribute name="СерНомДок" description="Серия и номер документа, удостоверяющего личность">
+                <type base="string">
+                  <maxLength value="25" />
+                  <minLength value="1" />
+                </type>
+              </attribute>
+              <attribute name="ДатаДок" description="Дата выдачи документа, удостоверяющего личность">
+                <type base="string" description="Такой даты не существует" requiredDescription="Поле должно быть заполнено">
+                  <length value="10" />
+                  <pattern value="((((0[1-9]{1}|1[0-9]{1}|2[0-8]{1})\.(0[1-9]{1}|1[0-2]{1}))|((29|30)\.(01|0[3-9]{1}|1[0-2]{1}))|(31\.(01|03|05|07|08|10|12)))\.((19|20)[0-9]{2}))|(29\.02\.((19|20)(((0|2|4|6|8)(0|4|8))|((1|3|5|7|9)(2|6)))))" />
+                </type>
+              </attribute>
+              <attribute name="ВыдДок" description="Наименование органа, выдавшего документ, удостоверяющий личность">
+                <type base="string">
+                  <maxLength value="255" />
+                  <minLength value="1" />
+                </type>
+              </attribute>
+            </element>
+            <element name="СвДокПодтвРег" optional="true" description="Сведения о документе, подтверждающем регистрацию физического лица по месту жительства (месту пребывания)">
+              <attribute name="КодВидДок" description="Код вида документа, удостоверяющего личность">
+                <type base="string">
+                  <length value="2" />
+                  <pattern value="[0-9]{2}" />
+                </type>
+              </attribute>
+              <attribute name="СерНомДок" description="Серия и номер документа, удостоверяющего личность">
+                <type base="string">
+                  <maxLength value="25" />
+                  <minLength value="1" />
+                </type>
+              </attribute>
+              <attribute name="ДатаДок" description="Дата выдачи документа, удостоверяющего личность">
+                <type base="string" description="Такой даты не существует" requiredDescription="Поле должно быть заполнено">
+                  <length value="10" />
+                  <pattern value="((((0[1-9]{1}|1[0-9]{1}|2[0-8]{1})\.(0[1-9]{1}|1[0-2]{1}))|((29|30)\.(01|0[3-9]{1}|1[0-2]{1}))|(31\.(01|03|05|07|08|10|12)))\.((19|20)[0-9]{2}))|(29\.02\.((19|20)(((0|2|4|6|8)(0|4|8))|((1|3|5|7|9)(2|6)))))" />
+                </type>
+              </attribute>
+              <attribute name="ВыдДок" description="Наименование органа, выдавшего документ, удостоверяющий личность">
+                <type base="string">
+                  <maxLength value="255" />
+                  <minLength value="1" />
+                </type>
+              </attribute>
+            </element>
+            <element name="АдрМЖИНострГр" optional="true" description="Адрес места жительства в стране постоянного проживания иностранного гражданина (лица без гражданства)">
+              <attribute name="КодСтр" description="Код страны">
+                <type base="string">
+                  <length value="3" />
+                  <pattern value="[0-9]{3}" />
+                </type>
+              </attribute>
+              <attribute name="АдрТекст" description="Адрес места жительства в стране постоянного проживания иностранного гражданина (лица без гражданства)">
+                <type base="string">
+                  <maxLength value="255" />
+                  <minLength value="1" />
+                </type>
+              </attribute>
+            </element>
+          </element>
+        </choice>
+      </element>
+      <element name="ОснПрКонтрЛиц" description="Основания для признания лица контролирующим лицом международной компании (организации, указанной в пункте 1.1 статьи 24.2 Кодекса)">
+        <attribute name="НомерКонтрЛиц" description="Номер контролирующего лица">
+          <type base="string">
+            <length value="8" />
+            <pattern value="(ИО|РО|ФЛ)-[0-9]{5}" />
+          </type>
+        </attribute>
+        <attribute name="ОснКонтрЛиц" description="Описание оснований для признания лица контролирующим лицом международной компании (организации, указанной в пункте 1.1 статьи 24.2 Кодекса)">
+          <type base="string">
+            <maxLength value="1000" />
+            <minLength value="1" />
+          </type>
+        </attribute>
+        <element name="ОснПрКонтрЛицМК" description="Основания для признания лица контролирующим лицом (заполняется международными компаниями)">
+          <attribute name="Код201" description="Код основания 201">
+            <type base="string">
+              <length value="1" />
+              <enumeration value="0" />
+              <enumeration value="1" />
+            </type>
+          </attribute>
+          <attribute name="Код202" description="Код основания 202">
+            <type base="string">
+              <length value="1" />
+              <enumeration value="0" />
+              <enumeration value="1" />
+            </type>
+          </attribute>
+          <attribute name="Код203" description="Код основания 203">
+            <type base="string">
+              <length value="1" />
+              <enumeration value="0" />
+              <enumeration value="1" />
+            </type>
+          </attribute>
+          <attribute name="Код204" description="Код основания 204">
+            <type base="string">
+              <length value="1" />
+              <enumeration value="0" />
+              <enumeration value="1" />
+            </type>
+          </attribute>
+          <attribute name="Код205" description="Код основания 205">
+            <type base="string">
+              <length value="1" />
+              <enumeration value="0" />
+              <enumeration value="1" />
+            </type>
+          </attribute>
+        </element>
+        <element name="ОснПрКонтрЛицОрг" description="Основания для признания лица контролирующим лицом (заполняется организациями, указанными в пункте 1.1 статьи 24.2 Кодекса)">
+          <attribute name="Код301" description="Код основания 301">
+            <type base="string">
+              <length value="1" />
+              <enumeration value="0" />
+              <enumeration value="1" />
+            </type>
+          </attribute>
+          <attribute name="Код302" description="Код основания 302">
+            <type base="string">
+              <length value="1" />
+              <enumeration value="0" />
+              <enumeration value="1" />
+            </type>
+          </attribute>
+          <attribute name="Код303" description="Код основания 303">
+            <type base="string">
+              <length value="1" />
+              <enumeration value="0" />
+              <enumeration value="1" />
+            </type>
+          </attribute>
+          <attribute name="Код304" description="Код основания 304">
+            <type base="string">
+              <length value="1" />
+              <enumeration value="0" />
+              <enumeration value="1" />
+            </type>
+          </attribute>
+        </element>
+        <element name="ДоляУч" description="Доли участия">
+          <attribute name="ДоляПрямУч" description="Доля прямого участия (в процентах)">
+            <type base="decimal">
+              <totalDigits value="18" />
+              <fractionDigits value="15" />
+            </type>
+          </attribute>
+          <attribute name="ДоляКосУч" description="Доля косвенного участия (в процентах)">
+            <type base="decimal">
+              <totalDigits value="18" />
+              <fractionDigits value="15" />
+            </type>
+          </attribute>
+          <attribute name="ДоляСмешУч" description="Доля смешанного участия (в процентах)">
+            <type base="decimal">
+              <totalDigits value="18" />
+              <fractionDigits value="15" />
+            </type>
+          </attribute>
+          <attribute name="ДоляУчСупДет" description="Доля совместного участия с супругом(-ой) и (или) несовершеннолетними детьми (в процентах)">
+            <type base="decimal">
+              <totalDigits value="18" />
+              <fractionDigits value="15" />
+            </type>
+          </attribute>
+        </element>        
+        <attribute name="org_type" editorOnly="true" description="Выберите значение">
+          <type base="string"/>
+        </attribute>
+        <choice>
+          <element name="ДоляДатаРегМК" description="На дату регистрации международной компании в порядке редомициляции совокупная доля прямого и (или) косвенного участия контролирующих лиц составляет не менее 75 процентов от совокупной доли прямого и (или) косвенного участия контролирующих лиц иностранной организации, являвшихся таковыми по состоянию на 1 марта 2022 года и (или) ставших таковыми в период с 1 марта 2022 года до даты регистрации этой международной компании в порядке редомициляции иностранной организации в результате наследования лиц, являвшихся контролирующими лицами этой иностранной организации в период до 1 марта 2022 года (заполняется международными компаниями)">
+            <innerText>
+              <type base="string">
+                <length value="1" />
+                <enumeration value="0" />
+                <enumeration value="1" />
+              </type>
+            </innerText>
+          </element>
+          <element name="ДоляДатаРегОрг" description="На дату подачи заявления о приобретении статуса международной холдинговой компании совокупная доля прямого и (или) косвенного участия контролирующих лиц составляет не менее 75 процентов от совокупной доли прямого и (или) косвенного участия контролирующих лиц организации, являвшихся таковыми по состоянию на 1 марта 2022 года и (или) ставших таковыми в период с 1 марта 2022 года до даты подачи такого заявления в результате наследования лиц, являвшихся контролирующими лицами этой организации в период до 1 марта 2022 года. При этом совокупная доля прямого и (или) косвенного участия контролирующих лиц организации, являвшихся таковыми по состоянию на 1 марта 2022 года, составляет не менее 75 процентов уставного капитала этой организации по состоянию на указанную дату (заполняется организациями, указанными в пункте 1.1 статьи 24.2 Кодекса)">
+            <innerText>
+              <type base="string">
+                <length value="1" />
+                <enumeration value="0" />
+                <enumeration value="1" />
+              </type>
+            </innerText>
+          </element>
+        </choice>
+      </element>
+      <element name="РаскрКонтрЛицМККосв" optional="true" description="Раскрытие порядка участия контролирующего лица в международной компании (организации, указанной в пункте 1.1 статьи 24.2 Кодекса) при наличии косвенного участия">
+        <attribute name="listB_exists" optional="true" editorOnly="true" description="Признак существования Листа В">
+					<type base="string" />
+				</attribute>
+        <attribute name="НомерКонтрЛиц" description="Номер контролирующего лица">
+          <type base="string">
+            <length value="8" />
+            <pattern value="(ИО|РО|ФЛ)-[0-9]{5}" />
+          </type>
+        </attribute>
+        <attribute name="ДоляУчКосвИт" description="Доля косвенного участия – итого (в процентах)">
+          <type base="decimal">
+            <totalDigits value="18" />
+            <fractionDigits value="15" />
+          </type>
+        </attribute>
+        <element name="РаскрУчМК" multiple="true" description="Раскрытие участия в международной компании (организации, указанной в пункте 1.1 статьи 24.2 Кодекса)">
+          <attribute name="НомерПосл" description="Номер последовательности участия">
+            <type base="string">
+              <length value="5" />
+            </type>
+          </attribute>
+          <attribute name="ДоляКосвПослИт" description="Доля косвенного участия в последовательности – итого (в процентах)">
+            <type base="decimal">
+              <totalDigits value="18" />
+              <fractionDigits value="15" />
+            </type>
+          </attribute>
+          <element name="СведУчПосл" multiple="true" description="Сведения об участниках последовательности">
+            <attribute name="НомерУчПосл" description="Номер участника последовательности">
+              <type base="string" description="принимает значение в виде: УИ-NNNNN, УР-NNNNN, УС-NNNNN, где NNNNN – пятизначный порядковый номер; МК-00000 для последнего участника в последовательности (международной компании); РК-00000 для последнего участника в последовательности (организации, указанной в п. 1.1 ст. 24.2 НК РФ)">
+                <length value="8" />
+                <pattern value="(УИ|УР|УС)-[0-9]{5}" />
+                <pattern value="МК-00000" />
+                <pattern value="РК-00000" />
+              </type>
+            </attribute>
+            <attribute name="ДоляУчПрям" optional="true" description="Доля прямого участия (в процентах)">
+              <type base="decimal">
+                <totalDigits value="18" />
+                <fractionDigits value="15" />
+              </type>
+            </attribute>
+            <attribute name="ДоляУчКосв" optional="true" description="Доля косвенного участия (в процентах)">
+              <type base="decimal">
+                <totalDigits value="18" />
+                <fractionDigits value="15" />
+              </type>
+            </attribute>
+          </element>
+          <element name="СвУчПослКосв" description="Сведения об участниках последовательности косвенного участия">
+            <element name="СвИО" multiple="true" optional="true" description="Сведения об иностранной организации">
+              <attribute name="НомерПосл" description="Номер последовательности участия">
+                <type base="string">
+                  <length value="5" />
+                </type>
+              </attribute>
+              <attribute name="НомерУчПосл" description="Номер участника последовательности">
+                <type base="string" description="Принимает значение в виде УИ-NNNNN, где NNNNN – пятизначный порядковый номер">
+                  <length value="8" />
+                  <pattern value="УИ-[0-9]{5}" />
+                </type>
+              </attribute>
+              <attribute name="НаимОрг" description="Полное наименование организации (в русской транскрипции)">
+                <type base="string">
+                  <maxLength value="1000" />
+                  <minLength value="1" />
+                </type>
+              </attribute>
+              <attribute name="НаимОргЛат" description="Полное наименование организации (в латинской транскрипции)">
+                <type base="string">
+                  <maxLength value="1000" />
+                  <minLength value="1" />
+                </type>
+              </attribute>
+              <attribute name="СтрРег" description="Код государства (территории) регистрации (инкорпорации)">
+                <type base="string">
+                  <length value="3" />
+                  <pattern value="[0-9]{3}" />
+                </type>
+              </attribute>
+              <attribute name="РегНомер" optional="true" description="Регистрационный номер (номера) в государстве (на территории) регистрации (инкорпорации) или его аналог">
+                <type base="string">
+                  <maxLength value="100" />
+                  <minLength value="1" />
+                </type>
+              </attribute>
+              <attribute name="КодНПРег" optional="true" description="Код (коды) налогоплательщика в государстве (на территории) регистрации (инкорпорации) или его аналог">
+                <type base="string">
+                  <maxLength value="100" />
+                  <minLength value="1" />
+                </type>
+              </attribute>
+              <attribute name="АдрСтрРег" optional="true" description="Адрес в государстве (на территории) регистрации (инкорпорации)">
+                <type base="string">
+                  <maxLength value="254" />
+                  <minLength value="1" />
+                </type>
+              </attribute>
+            </element>
+            <element name="СвРосОрг" multiple="true" optional="true" description="Сведения о российской организации">
+              <attribute name="НомерПосл" description="Номер последовательности участия">
+                <type base="string">
+                  <length value="5" />
+                </type>
+              </attribute>
+              <attribute name="НомерУчПосл" description="Номер участника последовательности">
+                <type base="string" description="Принимает значение в виде УР-NNNNN, где NNNNN – пятизначный порядковый номер">
+                  <length value="8" />
+                  <pattern value="УР-[0-9]{5}" />
+                </type>
+              </attribute>
+              <attribute name="ОГРН" description="ОГРН">
+                <type base="string">
+                  <length value="13" />
+                  <pattern value="[0-9]{13}" />
+                </type>
+              </attribute>
+              <attribute name="ИННЮЛ" description="ИНН">
+                <type base="string">
+                  <length value="10" />
+                  <pattern value="([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{8}" />
+                </type>
+              </attribute>
+              <attribute name="КПП" description="КПП">
+                <type base="string">
+                  <length value="9" />
+                  <pattern value="([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})([0-9]{2})([0-9A-Z]{2})([0-9]{3})" />
+                </type>
+              </attribute>
+              <attribute name="НаимОрг" description="Полное наименование организации">
+                <type base="string">
+                  <maxLength value="1000" />
+                  <minLength value="1" />
+                </type>
+              </attribute>
+            </element>
+            <element name="СведИСБезЮЛ" multiple="true" optional="true" description="Сведения об иностранной структуре без образования юридического лица">
+              <attribute name="НомерПосл" description="Номер последовательности участия">
+                <type base="string">
+                  <length value="5" />
+                </type>
+              </attribute>
+              <attribute name="НомерУчПосл" description="Номер участника последовательности">
+                <type base="string" description="Принимает значение в виде УС-NNNNN, где NNNNN – пятизначный порядковый номер">
+                  <length value="8" />
+                  <pattern value="УС-[0-9]{5}" />
+                </type>
+              </attribute>
+              <attribute name="ОргФорм" description="Организационная форма (код)">
+                <type base="decimal">
+                  <totalDigits value="1" />
+                  <enumeration value="1" />
+                  <enumeration value="2" />
+                  <enumeration value="3" />
+                  <enumeration value="4" />
+                  <enumeration value="5" />
+                </type>
+              </attribute>
+              <attribute name="НаимОрг" description="Наименование иностранной структуры (в русской транскрипции)">
+                <type base="string">
+                  <maxLength value="1000" />
+                  <minLength value="1" />
+                </type>
+              </attribute>
+              <attribute name="НаимОргЛат" description="Наименование иностранной структуры (в латинской транскрипции)">
+                <type base="string">
+                  <maxLength value="1000" />
+                  <minLength value="1" />
+                </type>
+              </attribute>
+              <attribute name="НаимДокУчр" optional="true" description="Наименование и реквизиты документа об учреждении иностранной структуры">
+                <type base="string">
+                  <maxLength value="200" />
+                  <minLength value="1" />
+                </type>
+              </attribute>
+              <attribute name="ДатаУчрИС" description="Дата учреждения (регистрации) иностранной структуры. Дата в формате ДД.ММ.ГГГГ">
+                <type base="string" description="Такой даты не существует" requiredDescription="Поле должно быть заполнено">
+                  <length value="10" />
+                  <pattern value="((((0[1-9]{1}|1[0-9]{1}|2[0-8]{1})\.(0[1-9]{1}|1[0-2]{1}))|((29|30)\.(01|0[3-9]{1}|1[0-2]{1}))|(31\.(01|03|05|07|08|10|12)))\.((19|20)[0-9]{2}))|(29\.02\.((19|20)(((0|2|4|6|8)(0|4|8))|((1|3|5|7|9)(2|6)))))" />
+                </type>
+              </attribute>
+              <attribute name="СтрРег" description="Код страны, в которой учреждена (зарегистрирована) иностранная структура">
+                <type base="string">
+                  <length value="3" />
+                  <pattern value="[0-9]{3}" />
+                </type>
+              </attribute>
+              <attribute name="РегНомер" optional="true" description="Регистрационный номер (иной идентификатор) иностранной структуры в государстве учреждения (регистрации) или его аналог">
+                <type base="string">
+                  <maxLength value="100" />
+                  <minLength value="1" />
+                </type>
+              </attribute>
+              <attribute name="СвИденИС" optional="true" description="Иные сведения, идентифицирующие иностранную структуру">
+                <type base="string">
+                  <maxLength value="1000" />
+                  <minLength value="1" />
+                </type>
+              </attribute>
+            </element>
+          </element>
+        </element>
+      </element>
+    </element>
+  </element>
+</element>
