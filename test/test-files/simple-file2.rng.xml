@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<element name="A">
+    <attribute name="a"><type base="string" /></attribute>
+           <choice><element name="B" />
+        <element 
+        
+        
+        name="X" /><element name="X1" /><element name="X2" />
+    </choice>
+</element>

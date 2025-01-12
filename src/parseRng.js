@@ -5,10 +5,19 @@ exports.parseRng = function parseRng(xml) {
     let root = { elements: [] };
     const stack = [root];
     const top = () => stack[stack.length - 1];
+    let openTagPosition;
+
+    parser.onopentagstart = () => {
+        openTagPosition = {
+            line: parser.line,
+            column: parser.column - (parser.position - parser.startTagPosition) - 1,
+        };
+    };
 
     parser.onopentag = node => {
+        let result;
         if (node.name === "element") {
-            const element = {
+            result = {
                 type: "element",
                 fullPath:
                     stack
@@ -20,14 +29,12 @@ exports.parseRng = function parseRng(xml) {
                 name: node.attributes.name,
                 elements: [],
                 attributes: [],
-                position: { line: parser.line, column: parser.column },
                 properties: node.attributes,
             };
             top().elements ??= [];
-            top().elements.push(element);
-            stack.push(element);
+            top().elements.push(result);
         } else if (node.name === "attribute") {
-            const attribute = {
+            result = {
                 type: "attribute",
                 name: node.attributes.name,
                 fullPath:
@@ -37,51 +44,49 @@ exports.parseRng = function parseRng(xml) {
                         .join("/") +
                     "/@" +
                     node.attributes.name,
-                position: { line: parser.line, column: parser.column },
                 properties: node.attributes,
                 dataType: undefined,
             };
-            if (top().attributes != undefined) top().attributes.push(attribute);
-            stack.push(attribute);
+            if (top().attributes != undefined) top().attributes.push(result);
         } else if (node.name === "choice") {
-            const node = {
+            result = {
                 type: "choice",
                 name: "choice",
                 elements: [],
                 attributes: [],
-                position: { line: parser.line, column: parser.column },
             };
-            if (top().elements != undefined) top().elements.push(node);
-            stack.push(node);
+            if (top().elements != undefined) top().elements.push(result);
         } else if (node.name === "type") {
-            const typeNode = {
+            result = {
                 type: "type",
                 name: "type",
                 base: node.attributes.base,
-                position: { line: parser.line, column: parser.column },
                 properties: node.attributes,
                 constraints: [],
             };
-            top().dataType = typeNode;
-            stack.push(typeNode);
+            top().dataType = result;
         } else if (top().type === "type") {
-            const constraint = {
+            result = {
                 type: "constraint",
                 name: node.name,
-                position: { line: parser.line, column: parser.column },
                 properties: node.attributes,
             };
-            if (top().constraints) top().constraints.push(constraint);
-            stack.push(constraint);
+            if (top().constraints) top().constraints.push(result);
         } else {
-            stack.push({ name: node.name });
+            result = { name: node.name };
         }
+        result.position = openTagPosition;
+        result.range = { start: openTagPosition };
+        stack.push(result);
     };
 
-    parser.ontext = text => {};
+    parser.ontext = () => {};
 
-    parser.onclosetag = node => {
-        stack.pop();
+    parser.onclosetag = () => {
+        const lastElement = stack.pop();
+        if (lastElement.range) {
+            lastElement.range.end = { line: parser.line, column: parser.column };
+        }
     };
 
     parser.onerror = err => {

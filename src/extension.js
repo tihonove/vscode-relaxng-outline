@@ -64,8 +64,9 @@ exports.activate = function activate(context) {
             await vscode.window.showTextDocument(editor.document, { preview: false, preserveFocus: false });
         }
         if (editor) {
-            const position = new vscode.Position(rngNode.position.line, rngNode.position.column);
-            var range = new vscode.Range(position, position);
+            const startPosition = new vscode.Position(rngNode.range.start.line, rngNode.range.start.column);
+            const endPosition = new vscode.Position(rngNode.range.end.line, rngNode.range.end.column);
+            var range = new vscode.Range(startPosition, endPosition);
             editor.revealRange(range, vscode.TextEditorRevealType.InCenter);
             editor.selection = new vscode.Selection(range.start, range.end);
         }
