@@ -37,6 +37,7 @@ exports.activate = function activate(context) {
     vscode.commands.registerCommand("relaxng-outline.unpinContent", () => {
         isTreeContentPinned = false;
         vscode.commands.executeCommand("setContext", "relaxng-outline.contentPinned", false);
+        syncronizedEditorWithOutline();
     });
 
     vscode.commands.registerCommand("relaxng-outline.copyRngNodePath", (rngNode) => {
@@ -67,13 +68,16 @@ exports.activate = function activate(context) {
             return;
         }
         const activeTextEditor = vscode.window.activeTextEditor;
-        currentDocumentUri = activeTextEditor.document.uri;
         isRelaxNG =
+            activeTextEditor?.document != undefined &&
             activeTextEditor?.document.uri.scheme === "file" &&
             activeTextEditor?.document.languageId === "xml" &&
             activeTextEditor?.document.getText().includes("<element");
         vscode.commands.executeCommand("setContext", "relaxng-outline.relaxNGOutlineEnabled", isRelaxNG);
         currentTreeViewProvider = null;
+        if (isRelaxNG) {
+            currentDocumentUri = activeTextEditor.document.uri;
+        }
         didChangeTreeDataEmitter.fire();
     }
 
