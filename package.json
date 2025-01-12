@@ -45,8 +45,18 @@
 			"view/title": [
 				{
 					"command": "relaxng-outline.refreshOutline",
-					"group": "navigation",
+					"group": "navigation@10",
 					"when": "view == relaxng-outline.relaxNGOutline"
+				},
+				{
+					"command": "relaxng-outline.unpinContent",
+					"group": "navigation@1",
+					"when": "view == relaxng-outline.relaxNGOutline && relaxng-outline.contentPinned"
+				},
+				{
+					"command": "relaxng-outline.pinContent",
+					"group": "navigation@2",
+					"when": "view == relaxng-outline.relaxNGOutline && !relaxng-outline.contentPinned"
 				}
 			],
 			"view/item/context": [
@@ -63,6 +73,16 @@
 			]
 		},
 		"commands": [
+			{
+				"command": "relaxng-outline.pinContent",
+				"title": "Pin outline content",
+				"icon": "$(pin)"
+			},
+			{
+				"command": "relaxng-outline.unpinContent",
+				"title": "Unpin outline content",
+				"icon": "$(pinned)"
+			},
 			{
 				"command": "relaxng-outline.openRngNode",
 				"title": "Open RelaxNG Node",

@@ -4,7 +4,9 @@ const { parseRng } = require("./parseRng");
 exports.activate = function activate(context) {
     const didChangeTreeDataEmitter = new vscode.EventEmitter();
     let isRelaxNG = false;
+    let isTreeContentPinned = false;
     let currentTreeViewProvider = null;
+    let currentDocumentUri = null;
 
     const treeViewProvider = {
         onDidChangeTreeData: didChangeTreeDataEmitter.event,
@@ -27,6 +29,16 @@ exports.activate = function activate(context) {
         syncronizedEditorWithOutline();
     });
 
+    vscode.commands.registerCommand("relaxng-outline.pinContent", () => {
+        isTreeContentPinned = true;
+        vscode.commands.executeCommand("setContext", "relaxng-outline.contentPinned", true);
+    });
+
+    vscode.commands.registerCommand("relaxng-outline.unpinContent", () => {
+        isTreeContentPinned = false;
+        vscode.commands.executeCommand("setContext", "relaxng-outline.contentPinned", false);
+    });
+
     vscode.commands.registerCommand("relaxng-outline.copyRngNodePath", (rngNode) => {
         if (rngNode.fullPath)
             vscode.env.clipboard.writeText(rngNode.fullPath);
@@ -34,18 +46,28 @@ exports.activate = function activate(context) {
     });
 
     vscode.commands.registerCommand("relaxng-outline.openRngNode", async rngNode => {
-        const activeTextEditor = vscode.window.activeTextEditor;
-        if (activeTextEditor) {
+        let editor;
+        if (isTreeContentPinned) { 
+            const document = vscode.workspace.openTextDocument(currentDocumentUri);
+            editor = await vscode.window.showTextDocument(document, { preview: false, preserveFocus: false });
+        } else {
+            editor = vscode.window.activeTextEditor;
+            await vscode.window.showTextDocument(editor.document, { preview: false, preserveFocus: false });
+        }
+        if (editor) {
             const position = new vscode.Position(rngNode.position.line, rngNode.position.column);
             var range = new vscode.Range(position, position);
-            await vscode.window.showTextDocument(activeTextEditor.document, { preview: false, preserveFocus: false });
-            activeTextEditor.revealRange(range, vscode.TextEditorRevealType.InCenter);
-            activeTextEditor.selection = new vscode.Selection(range.start, range.end);
+            editor.revealRange(range, vscode.TextEditorRevealType.InCenter);
+            editor.selection = new vscode.Selection(range.start, range.end);
         }
     });
 
     function syncronizedEditorWithOutline() {
+        if (isTreeContentPinned) {
+            return;
+        }
         const activeTextEditor = vscode.window.activeTextEditor;
+        currentDocumentUri = activeTextEditor.document.uri;
         isRelaxNG =
             activeTextEditor?.document.uri.scheme === "file" &&
             activeTextEditor?.document.languageId === "xml" &&
