@@ -3,7 +3,7 @@
 	"displayName": "RelaxNG outline",
 	"description": "Display outline for RelaxNG files",
 	"publisher": "tihonove",
-	"version": "0.1.5",
+	"version": "0.2.0",
 	"license": "MIT",
 	"engines": {
 		"vscode": "^1.74.0"
