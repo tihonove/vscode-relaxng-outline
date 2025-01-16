@@ -77,6 +77,7 @@ exports.parseRng = function parseRng(xml) {
         }
         result.position = openTagPosition;
         result.range = { start: openTagPosition };
+        result.parent = top();
         stack.push(result);
     };
 

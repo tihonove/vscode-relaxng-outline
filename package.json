@@ -49,6 +49,11 @@
 					"when": "view == relaxng-outline.relaxNGOutline"
 				},
 				{
+					"command": "relaxng-outline.expandAllNodes",
+					"group": "navigation@20",
+					"when": "view == relaxng-outline.relaxNGOutline"
+				},
+				{
 					"command": "relaxng-outline.unpinContent",
 					"group": "navigation@1",
 					"when": "view == relaxng-outline.relaxNGOutline && relaxng-outline.contentPinned"
@@ -77,6 +82,11 @@
 				"command": "relaxng-outline.pinContent",
 				"title": "Pin outline content",
 				"icon": "$(pin)"
+			},
+			{
+				"command": "relaxng-outline.expandAllNodes",
+				"title": "Expand all nodes",
+				"icon": "$(expand-all)"
 			},
 			{
 				"command": "relaxng-outline.unpinContent",

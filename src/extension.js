@@ -11,6 +11,7 @@ exports.activate = function activate(context) {
 
     const treeViewProvider = {
         onDidChangeTreeData: didChangeTreeDataEmitter.event,
+        getParent: e => currentTreeViewProvider?.getParent(e),
         getChildren: e => {
             if (currentTreeViewProvider == null && isRelaxNG) {
                 const text = vscode.window.activeTextEditor?.document.getText();
@@ -27,7 +28,7 @@ exports.activate = function activate(context) {
         getTreeItem: e => currentTreeViewProvider?.getTreeItem(e),
     };
 
-    vscode.window.createTreeView("relaxng-outline.relaxNGOutline", {
+    const treeView = vscode.window.createTreeView("relaxng-outline.relaxNGOutline", {
         treeDataProvider: treeViewProvider,
         showCollapseAll: true,
     });
@@ -41,6 +42,28 @@ exports.activate = function activate(context) {
     vscode.commands.registerCommand("relaxng-outline.pinContent", () => {
         isTreeContentPinned = true;
         vscode.commands.executeCommand("setContext", "relaxng-outline.contentPinned", true);
+    });
+
+    vscode.commands.registerCommand("relaxng-outline.expandAllNodes", async () => {
+        async function revealNode(node) {
+            if (node.type === "attribute") {
+                await treeView.reveal(node, { expand: false, focus: false, select: false });
+            } else {
+                const children = await treeViewProvider.getChildren(node);
+                if (children) {
+                    for (const child of children) {
+                        revealNode(child);
+                    }
+                }
+            }
+        }
+
+        const rootNodes = await treeViewProvider.getChildren();
+        if (rootNodes) {
+            for (const rootNode of rootNodes) {
+                await revealNode(rootNode);
+            }
+        }
     });
 
     vscode.commands.registerCommand("relaxng-outline.unpinContent", () => {
@@ -107,6 +130,10 @@ const debounce = (func, wait) => {
 class DocumentTreeViewProvider {
     constructor(parsedRngRoot) {
         this.parsedRngRoot = parsedRngRoot;
+    }
+
+    getParent(rngNode) {
+        return rngNode?.parent;
     }
 
     getChildren(rngNode) {
