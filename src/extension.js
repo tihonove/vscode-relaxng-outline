@@ -5,6 +5,7 @@ exports.activate = function activate(context) {
     const didChangeTreeDataEmitter = new vscode.EventEmitter();
     let isRelaxNG = false;
     let isTreeContentPinned = false;
+    let followCursor = context.workspaceState.get("relaxng-outline.followCursor", false);
     let showOnErrorTreeViewProvider = null;
     let currentTreeViewProvider = null;
     let currentDocumentUri = null;
@@ -72,9 +73,26 @@ exports.activate = function activate(context) {
         syncronizedEditorWithOutline();
     });
 
+    vscode.commands.registerCommand("relaxng-outline.enableFollowCursor", () => {
+        followCursor = true;
+        vscode.commands.executeCommand("setContext", "relaxng-outline.followCursor", followCursor);
+        context.workspaceState.update("relaxng-outline.followCursor", followCursor)
+    });
+
+    vscode.commands.registerCommand("relaxng-outline.disableFollowCursor", () => {
+        followCursor = false;
+        vscode.commands.executeCommand("setContext", "relaxng-outline.followCursor", followCursor);
+        context.workspaceState.update("relaxng-outline.followCursor", followCursor)
+    });
+
     vscode.commands.registerCommand("relaxng-outline.copyRngNodePath", rngNode => {
         if (rngNode.fullPath) vscode.env.clipboard.writeText(rngNode.fullPath);
         syncronizedEditorWithOutline();
+    });
+
+    vscode.commands.registerCommand("relaxng-outline.revealNodeAtCursor", () => {
+        const textEditor = vscode.window.activeTextEditor;
+        revealNodeAtCursorForEditor(textEditor, true);
     });
 
     vscode.commands.registerCommand("relaxng-outline.openRngNode", async rngNode => {
@@ -94,6 +112,27 @@ exports.activate = function activate(context) {
             editor.selection = new vscode.Selection(range.start, range.end);
         }
     });
+
+    context.subscriptions.push(
+        vscode.window.onDidChangeTextEditorSelection(event => {
+            if (!followCursor)
+                return;
+            revealNodeAtCursorForEditor(event.textEditor, false)
+        })
+    );
+
+    function revealNodeAtCursorForEditor(textEditor, focus) {
+        if (textEditor?.document?.uri.toString() !== currentDocumentUri?.toString())
+            return;
+        const position = textEditor.selections[0]?.active;
+        const offset = textEditor.document.offsetAt(position)
+        if (position) {
+            const node = currentTreeViewProvider?.getNodeForOffset(offset);
+            if (node) {
+                treeView.reveal(node, { select: true, focus: focus });
+            }
+        }
+    }
 
     function syncronizedEditorWithOutline(doNotResetPreviousContent = false) {
         if (isTreeContentPinned) {
@@ -130,6 +169,19 @@ const debounce = (func, wait) => {
 class DocumentTreeViewProvider {
     constructor(parsedRngRoot) {
         this.parsedRngRoot = parsedRngRoot;
+    }
+
+    getNodeForOffset(offset) {
+        const findByOffsetDfs = (rngNode) => {
+            for (var child of this.getChildren(rngNode) ?? []) {
+                if (child?.range?.start?.offset <= offset && child?.range?.end?.offset >= offset) {
+                    return findByOffsetDfs(child);
+                }
+            }
+            return rngNode;
+        }
+        const r = findByOffsetDfs(undefined);
+        return findByOffsetDfs(undefined);
     }
 
     getParent(rngNode) {

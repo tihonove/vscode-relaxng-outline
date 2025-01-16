@@ -11,6 +11,7 @@ exports.parseRng = function parseRng(xml) {
         openTagPosition = {
             line: parser.line,
             column: parser.column - (parser.position - parser.startTagPosition) - 1,
+            offset: parser.startTagPosition,
         };
     };
 
@@ -86,7 +87,7 @@ exports.parseRng = function parseRng(xml) {
     parser.onclosetag = () => {
         const lastElement = stack.pop();
         if (lastElement.range) {
-            lastElement.range.end = { line: parser.line, column: parser.column };
+            lastElement.range.end = { line: parser.line, column: parser.column, offset: parser.position };
         }
     };
 

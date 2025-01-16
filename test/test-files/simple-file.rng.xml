@@ -4,8 +4,8 @@
         <type base="string" />
     </attribute>
     <choice>
-        <element name="B" />
         <element name="X" />
+        <element name="B" />
         <element name="X1" />
         <element name="X2" />
     </choice>

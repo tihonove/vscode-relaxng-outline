@@ -45,23 +45,33 @@
 			"view/title": [
 				{
 					"command": "relaxng-outline.refreshOutline",
-					"group": "navigation@10",
-					"when": "view == relaxng-outline.relaxNGOutline"
-				},
-				{
-					"command": "relaxng-outline.expandAllNodes",
 					"group": "navigation@20",
 					"when": "view == relaxng-outline.relaxNGOutline"
 				},
 				{
+					"command": "relaxng-outline.expandAllNodes",
+					"group": "navigation@90",
+					"when": "view == relaxng-outline.relaxNGOutline"
+				},
+				{
 					"command": "relaxng-outline.unpinContent",
-					"group": "navigation@1",
+					"group": "navigation@11",
 					"when": "view == relaxng-outline.relaxNGOutline && relaxng-outline.contentPinned"
 				},
 				{
 					"command": "relaxng-outline.pinContent",
-					"group": "navigation@2",
+					"group": "navigation@12",
 					"when": "view == relaxng-outline.relaxNGOutline && !relaxng-outline.contentPinned"
+				},
+				{
+					"command": "relaxng-outline.enableFollowCursor",
+					"group": "navigation@1",
+					"when": "view == relaxng-outline.relaxNGOutline && !relaxng-outline.followCursor"
+				},
+				{
+					"command": "relaxng-outline.disableFollowCursor",
+					"group": "navigation@2",
+					"when": "view == relaxng-outline.relaxNGOutline && relaxng-outline.followCursor"
 				}
 			],
 			"view/item/context": [
@@ -78,6 +88,25 @@
 			]
 		},
 		"commands": [
+			{
+				"command": "relaxng-outline.enableFollowCursor",
+				"title": "Follow cursor",
+				"category": "RelaxNG outline",
+				"icon": "$(eye-closed)"
+			},
+			{
+				"command": "relaxng-outline.disableFollowCursor",
+				"title": "Do not follow cursor",
+				"category": "RelaxNG outline",
+				"icon": "$(eye)"
+			},
+			{
+				"command": "relaxng-outline.revealNodeAtCursor",
+				"title": "Reveal node at cursor",
+				"category": "RelaxNG outline",
+				"icon": "$(target)",
+				"when": "editorFocus"
+			},
 			{
 				"command": "relaxng-outline.pinContent",
 				"title": "Pin outline content",
