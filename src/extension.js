@@ -76,13 +76,13 @@ exports.activate = function activate(context) {
     vscode.commands.registerCommand("relaxng-outline.enableFollowCursor", () => {
         followCursor = true;
         vscode.commands.executeCommand("setContext", "relaxng-outline.followCursor", followCursor);
-        context.workspaceState.update("relaxng-outline.followCursor", followCursor)
+        context.workspaceState.update("relaxng-outline.followCursor", followCursor);
     });
 
     vscode.commands.registerCommand("relaxng-outline.disableFollowCursor", () => {
         followCursor = false;
         vscode.commands.executeCommand("setContext", "relaxng-outline.followCursor", followCursor);
-        context.workspaceState.update("relaxng-outline.followCursor", followCursor)
+        context.workspaceState.update("relaxng-outline.followCursor", followCursor);
     });
 
     vscode.commands.registerCommand("relaxng-outline.copyRngNodePath", rngNode => {
@@ -92,7 +92,7 @@ exports.activate = function activate(context) {
 
     vscode.commands.registerCommand("relaxng-outline.revealNodeAtCursor", () => {
         const textEditor = vscode.window.activeTextEditor;
-        revealNodeAtCursorForEditor(textEditor, true);
+        revealNodeAtCursorForEditor(textEditor, true, false);
     });
 
     vscode.commands.registerCommand("relaxng-outline.openRngNode", async rngNode => {
@@ -115,17 +115,16 @@ exports.activate = function activate(context) {
 
     context.subscriptions.push(
         vscode.window.onDidChangeTextEditorSelection(event => {
-            if (!followCursor)
-                return;
-            revealNodeAtCursorForEditor(event.textEditor, false)
+            if (!followCursor) return;
+            revealNodeAtCursorForEditor(event.textEditor, false, true);
         })
     );
 
-    function revealNodeAtCursorForEditor(textEditor, focus) {
-        if (textEditor?.document?.uri.toString() !== currentDocumentUri?.toString())
-            return;
+    function revealNodeAtCursorForEditor(textEditor, focus, skipIfInvisible) {
+        if (textEditor?.document?.uri.toString() !== currentDocumentUri?.toString()) return;
+        if (skipIfInvisible && !(treeView?.visible ?? false)) return;
         const position = textEditor.selections[0]?.active;
-        const offset = textEditor.document.offsetAt(position)
+        const offset = textEditor.document.offsetAt(position);
         if (position) {
             const node = currentTreeViewProvider?.getNodeForOffset(offset);
             if (node) {
@@ -172,14 +171,14 @@ class DocumentTreeViewProvider {
     }
 
     getNodeForOffset(offset) {
-        const findByOffsetDfs = (rngNode) => {
+        const findByOffsetDfs = rngNode => {
             for (var child of this.getChildren(rngNode) ?? []) {
                 if (child?.range?.start?.offset <= offset && child?.range?.end?.offset >= offset) {
                     return findByOffsetDfs(child);
                 }
             }
             return rngNode;
-        }
+        };
         const r = findByOffsetDfs(undefined);
         return findByOffsetDfs(undefined);
     }
