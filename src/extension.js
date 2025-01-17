@@ -1,4 +1,5 @@
 const vscode = require("vscode");
+const path = require("path");
 const { parseRng } = require("./parseRng");
 
 exports.activate = function activate(context) {
@@ -17,7 +18,7 @@ exports.activate = function activate(context) {
             if (currentTreeViewProvider == null && isRelaxNG) {
                 const text = vscode.window.activeTextEditor?.document.getText();
                 try {
-                    currentTreeViewProvider = new DocumentTreeViewProvider(parseRng(text));
+                    currentTreeViewProvider = new DocumentTreeViewProvider(parseRng(text), context);
                     showOnErrorTreeViewProvider = currentTreeViewProvider;
                     didChangeTreeDataEmitter.fire();
                 } catch (error) {
@@ -166,8 +167,9 @@ const debounce = (func, wait) => {
 };
 
 class DocumentTreeViewProvider {
-    constructor(parsedRngRoot) {
+    constructor(parsedRngRoot, context) {
         this.parsedRngRoot = parsedRngRoot;
+        this.context = context;
     }
 
     getNodeForOffset(offset) {
@@ -223,7 +225,7 @@ class DocumentTreeViewProvider {
                 collapsibleState: vscode.TreeItemCollapsibleState.Collapsed,
                 description: description ?? "",
                 tooltip: description ?? "",
-                iconPath: new vscode.ThemeIcon("symbol-property"),
+                iconPath: new vscode.ThemeIcon("mention"),
                 contextValue: "relaxng-outline.rngNode.hasPath",
             };
         } else if (rngNode.type === "type") {
