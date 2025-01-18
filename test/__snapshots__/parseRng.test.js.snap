@@ -15778,6 +15778,4608 @@ exports[`RelaxNG Parser Test files parser Parse 128602.rng.xml without errors 1`
 }
 `;
 
+exports[`RelaxNG Parser Test files parser Parse relaxng.rng.xml without errors 1`] = `
+{
+  "elements": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [],
+              "name": "pattern",
+              "parent": [Circular],
+              "position": {
+                "column": 4,
+                "line": 7,
+                "offset": 291,
+              },
+              "range": {
+                "end": {
+                  "column": 26,
+                  "line": 7,
+                  "offset": 312,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 7,
+                  "offset": 291,
+                },
+              },
+              "type": "ref",
+            },
+          ],
+          "name": "start",
+          "parent": [Circular],
+          "position": {
+            "column": 2,
+            "line": 6,
+            "offset": 279,
+          },
+          "range": {
+            "end": {
+              "column": 10,
+              "line": 8,
+              "offset": 323,
+            },
+            "start": {
+              "column": 2,
+              "line": 6,
+              "offset": 279,
+            },
+          },
+          "type": "start",
+        },
+        {
+          "children": [
+            {
+              "attributes": [],
+              "elements": [
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "attributes": [
+                        {
+                          "dataType": undefined,
+                          "fullPath": "element/@name",
+                          "name": "name",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 14,
+                            "offset": 423,
+                          },
+                          "properties": {
+                            "name": "name",
+                          },
+                          "range": {
+                            "end": {
+                              "column": 22,
+                              "line": 16,
+                              "offset": 502,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 14,
+                              "offset": 423,
+                            },
+                          },
+                          "type": "attribute",
+                        },
+                      ],
+                      "elements": [
+                        {
+                          "children": [],
+                          "name": "open-name-class",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 17,
+                            "offset": 514,
+                          },
+                          "range": {
+                            "end": {
+                              "column": 40,
+                              "line": 17,
+                              "offset": 543,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 17,
+                              "offset": 514,
+                            },
+                          },
+                          "type": "ref",
+                        },
+                      ],
+                      "name": "choice",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 13,
+                        "offset": 404,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 17,
+                          "line": 18,
+                          "offset": 561,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 13,
+                          "offset": 404,
+                        },
+                      },
+                      "type": "choice",
+                    },
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 19,
+                        "offset": 571,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 19,
+                          "offset": 596,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 19,
+                          "offset": 571,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "open-patterns",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 20,
+                        "offset": 606,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 36,
+                          "line": 20,
+                          "offset": 633,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 20,
+                          "offset": 606,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "fullPath": "/element",
+                  "name": "element",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 12,
+                    "offset": 371,
+                  },
+                  "properties": {
+                    "name": "element",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 21,
+                      "offset": 650,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 12,
+                      "offset": 371,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 23,
+                        "offset": 693,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 23,
+                          "offset": 718,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 23,
+                          "offset": 693,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "attributes": [
+                        {
+                          "dataType": undefined,
+                          "fullPath": "attribute/@name",
+                          "name": "name",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 25,
+                            "offset": 747,
+                          },
+                          "properties": {
+                            "name": "name",
+                          },
+                          "range": {
+                            "end": {
+                              "column": 22,
+                              "line": 27,
+                              "offset": 826,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 25,
+                              "offset": 747,
+                            },
+                          },
+                          "type": "attribute",
+                        },
+                      ],
+                      "elements": [
+                        {
+                          "children": [],
+                          "name": "open-name-class",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 28,
+                            "offset": 838,
+                          },
+                          "range": {
+                            "end": {
+                              "column": 40,
+                              "line": 28,
+                              "offset": 867,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 28,
+                              "offset": 838,
+                            },
+                          },
+                          "type": "ref",
+                        },
+                      ],
+                      "name": "choice",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 24,
+                        "offset": 728,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 17,
+                          "line": 29,
+                          "offset": 885,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 24,
+                          "offset": 728,
+                        },
+                      },
+                      "type": "choice",
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [],
+                          "name": "other",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 31,
+                            "offset": 918,
+                          },
+                          "range": {
+                            "end": {
+                              "column": 30,
+                              "line": 31,
+                              "offset": 937,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 31,
+                              "offset": 918,
+                            },
+                          },
+                          "type": "ref",
+                        },
+                        {
+                          "children": [
+                            {
+                              "children": [],
+                              "name": "pattern",
+                              "parent": [Circular],
+                              "position": {
+                                "column": 12,
+                                "line": 33,
+                                "offset": 972,
+                              },
+                              "range": {
+                                "end": {
+                                  "column": 34,
+                                  "line": 33,
+                                  "offset": 993,
+                                },
+                                "start": {
+                                  "column": 12,
+                                  "line": 33,
+                                  "offset": 972,
+                                },
+                              },
+                              "type": "ref",
+                            },
+                          ],
+                          "name": "optional",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 32,
+                            "offset": 949,
+                          },
+                          "range": {
+                            "end": {
+                              "column": 21,
+                              "line": 34,
+                              "offset": 1015,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 32,
+                              "offset": 949,
+                            },
+                          },
+                          "type": "optional",
+                        },
+                      ],
+                      "name": "interleave",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 30,
+                        "offset": 895,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 21,
+                          "line": 35,
+                          "offset": 1037,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 30,
+                          "offset": 895,
+                        },
+                      },
+                      "type": "interleave",
+                    },
+                  ],
+                  "fullPath": "/attribute",
+                  "name": "attribute",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 22,
+                    "offset": 658,
+                  },
+                  "properties": {
+                    "name": "attribute",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 36,
+                      "offset": 1054,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 22,
+                      "offset": 658,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 38,
+                        "offset": 1093,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 38,
+                          "offset": 1118,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 38,
+                          "offset": 1093,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "open-patterns",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 39,
+                        "offset": 1128,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 36,
+                          "line": 39,
+                          "offset": 1155,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 39,
+                          "offset": 1128,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "fullPath": "/group",
+                  "name": "group",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 37,
+                    "offset": 1062,
+                  },
+                  "properties": {
+                    "name": "group",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 40,
+                      "offset": 1172,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 37,
+                      "offset": 1062,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 42,
+                        "offset": 1216,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 42,
+                          "offset": 1241,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 42,
+                          "offset": 1216,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "open-patterns",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 43,
+                        "offset": 1251,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 36,
+                          "line": 43,
+                          "offset": 1278,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 43,
+                          "offset": 1251,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "fullPath": "/interleave",
+                  "name": "interleave",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 41,
+                    "offset": 1180,
+                  },
+                  "properties": {
+                    "name": "interleave",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 44,
+                      "offset": 1295,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 41,
+                      "offset": 1180,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 46,
+                        "offset": 1335,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 46,
+                          "offset": 1360,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 46,
+                          "offset": 1335,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "open-patterns",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 47,
+                        "offset": 1370,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 36,
+                          "line": 47,
+                          "offset": 1397,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 47,
+                          "offset": 1370,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "fullPath": "/choice",
+                  "name": "choice",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 45,
+                    "offset": 1303,
+                  },
+                  "properties": {
+                    "name": "choice",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 48,
+                      "offset": 1414,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 45,
+                      "offset": 1303,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 50,
+                        "offset": 1456,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 50,
+                          "offset": 1481,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 50,
+                          "offset": 1456,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "open-patterns",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 51,
+                        "offset": 1491,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 36,
+                          "line": 51,
+                          "offset": 1518,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 51,
+                          "offset": 1491,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "fullPath": "/optional",
+                  "name": "optional",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 49,
+                    "offset": 1422,
+                  },
+                  "properties": {
+                    "name": "optional",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 52,
+                      "offset": 1535,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 49,
+                      "offset": 1422,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 54,
+                        "offset": 1579,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 54,
+                          "offset": 1604,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 54,
+                          "offset": 1579,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "open-patterns",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 55,
+                        "offset": 1614,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 36,
+                          "line": 55,
+                          "offset": 1641,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 55,
+                          "offset": 1614,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "fullPath": "/zeroOrMore",
+                  "name": "zeroOrMore",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 53,
+                    "offset": 1543,
+                  },
+                  "properties": {
+                    "name": "zeroOrMore",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 56,
+                      "offset": 1658,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 53,
+                      "offset": 1543,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 58,
+                        "offset": 1701,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 58,
+                          "offset": 1726,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 58,
+                          "offset": 1701,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "open-patterns",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 59,
+                        "offset": 1736,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 36,
+                          "line": 59,
+                          "offset": 1763,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 59,
+                          "offset": 1736,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "fullPath": "/oneOrMore",
+                  "name": "oneOrMore",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 57,
+                    "offset": 1666,
+                  },
+                  "properties": {
+                    "name": "oneOrMore",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 60,
+                      "offset": 1780,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 57,
+                      "offset": 1666,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 62,
+                        "offset": 1818,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 62,
+                          "offset": 1843,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 62,
+                          "offset": 1818,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "open-patterns",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 63,
+                        "offset": 1853,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 36,
+                          "line": 63,
+                          "offset": 1880,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 63,
+                          "offset": 1853,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "fullPath": "/list",
+                  "name": "list",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 61,
+                    "offset": 1788,
+                  },
+                  "properties": {
+                    "name": "list",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 64,
+                      "offset": 1897,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 61,
+                      "offset": 1788,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 66,
+                        "offset": 1936,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 66,
+                          "offset": 1961,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 66,
+                          "offset": 1936,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "open-patterns",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 67,
+                        "offset": 1971,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 36,
+                          "line": 67,
+                          "offset": 1998,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 67,
+                          "offset": 1971,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "fullPath": "/mixed",
+                  "name": "mixed",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 65,
+                    "offset": 1905,
+                  },
+                  "properties": {
+                    "name": "mixed",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 68,
+                      "offset": 2015,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 65,
+                      "offset": 1905,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [
+                    {
+                      "dataType": undefined,
+                      "fullPath": "ref/@name",
+                      "name": "name",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 70,
+                        "offset": 2052,
+                      },
+                      "properties": {
+                        "name": "name",
+                      },
+                      "range": {
+                        "end": {
+                          "column": 20,
+                          "line": 72,
+                          "offset": 2128,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 70,
+                          "offset": 2052,
+                        },
+                      },
+                      "type": "attribute",
+                    },
+                  ],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 73,
+                        "offset": 2138,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 73,
+                          "offset": 2163,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 73,
+                          "offset": 2138,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "other",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 74,
+                        "offset": 2173,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 28,
+                          "line": 74,
+                          "offset": 2192,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 74,
+                          "offset": 2173,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "fullPath": "/ref",
+                  "name": "ref",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 69,
+                    "offset": 2023,
+                  },
+                  "properties": {
+                    "name": "ref",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 75,
+                      "offset": 2209,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 69,
+                      "offset": 2023,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [
+                    {
+                      "dataType": undefined,
+                      "fullPath": "parentRef/@name",
+                      "name": "name",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 77,
+                        "offset": 2252,
+                      },
+                      "properties": {
+                        "name": "name",
+                      },
+                      "range": {
+                        "end": {
+                          "column": 20,
+                          "line": 79,
+                          "offset": 2328,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 77,
+                          "offset": 2252,
+                        },
+                      },
+                      "type": "attribute",
+                    },
+                  ],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 80,
+                        "offset": 2338,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 80,
+                          "offset": 2363,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 80,
+                          "offset": 2338,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "other",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 81,
+                        "offset": 2373,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 28,
+                          "line": 81,
+                          "offset": 2392,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 81,
+                          "offset": 2373,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "fullPath": "/parentRef",
+                  "name": "parentRef",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 76,
+                    "offset": 2217,
+                  },
+                  "properties": {
+                    "name": "parentRef",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 82,
+                      "offset": 2409,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 76,
+                      "offset": 2217,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 84,
+                        "offset": 2448,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 84,
+                          "offset": 2473,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 84,
+                          "offset": 2448,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "other",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 85,
+                        "offset": 2483,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 28,
+                          "line": 85,
+                          "offset": 2502,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 85,
+                          "offset": 2483,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "fullPath": "/empty",
+                  "name": "empty",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 83,
+                    "offset": 2417,
+                  },
+                  "properties": {
+                    "name": "empty",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 86,
+                      "offset": 2519,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 83,
+                      "offset": 2417,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 88,
+                        "offset": 2557,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 88,
+                          "offset": 2582,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 88,
+                          "offset": 2557,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "other",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 89,
+                        "offset": 2592,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 28,
+                          "line": 89,
+                          "offset": 2611,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 89,
+                          "offset": 2592,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "fullPath": "/text",
+                  "name": "text",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 87,
+                    "offset": 2527,
+                  },
+                  "properties": {
+                    "name": "text",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 90,
+                      "offset": 2628,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 87,
+                      "offset": 2527,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "children": [
+                        {
+                          "dataType": undefined,
+                          "fullPath": "value/@type",
+                          "name": "type",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 93,
+                            "offset": 2688,
+                          },
+                          "properties": {
+                            "name": "type",
+                          },
+                          "range": {
+                            "end": {
+                              "column": 22,
+                              "line": 95,
+                              "offset": 2768,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 93,
+                              "offset": 2688,
+                            },
+                          },
+                          "type": "attribute",
+                        },
+                      ],
+                      "name": "optional",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 92,
+                        "offset": 2667,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 19,
+                          "line": 96,
+                          "offset": 2788,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 92,
+                          "offset": 2667,
+                        },
+                      },
+                      "type": "optional",
+                    },
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 97,
+                        "offset": 2798,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 97,
+                          "offset": 2823,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 97,
+                          "offset": 2798,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "text",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 98,
+                        "offset": 2833,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 16,
+                          "line": 98,
+                          "offset": 2840,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 98,
+                          "offset": 2833,
+                        },
+                      },
+                      "type": "text",
+                    },
+                  ],
+                  "fullPath": "/value",
+                  "name": "value",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 91,
+                    "offset": 2636,
+                  },
+                  "properties": {
+                    "name": "value",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 99,
+                      "offset": 2857,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 91,
+                      "offset": 2636,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [
+                    {
+                      "dataType": undefined,
+                      "fullPath": "data/@type",
+                      "name": "type",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 101,
+                        "offset": 2895,
+                      },
+                      "properties": {
+                        "name": "type",
+                      },
+                      "range": {
+                        "end": {
+                          "column": 20,
+                          "line": 103,
+                          "offset": 2971,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 101,
+                          "offset": 2895,
+                        },
+                      },
+                      "type": "attribute",
+                    },
+                  ],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 104,
+                        "offset": 2981,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 104,
+                          "offset": 3006,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 104,
+                          "offset": 2981,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [],
+                          "name": "other",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 106,
+                            "offset": 3039,
+                          },
+                          "range": {
+                            "end": {
+                              "column": 30,
+                              "line": 106,
+                              "offset": 3058,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 106,
+                              "offset": 3039,
+                            },
+                          },
+                          "type": "ref",
+                        },
+                        {
+                          "children": [
+                            {
+                              "children": [
+                                {
+                                  "attributes": [
+                                    {
+                                      "dataType": undefined,
+                                      "fullPath": "data/param/@name",
+                                      "name": "name",
+                                      "parent": [Circular],
+                                      "position": {
+                                        "column": 16,
+                                        "line": 110,
+                                        "offset": 3156,
+                                      },
+                                      "properties": {
+                                        "name": "name",
+                                      },
+                                      "range": {
+                                        "end": {
+                                          "column": 28,
+                                          "line": 112,
+                                          "offset": 3248,
+                                        },
+                                        "start": {
+                                          "column": 16,
+                                          "line": 110,
+                                          "offset": 3156,
+                                        },
+                                      },
+                                      "type": "attribute",
+                                    },
+                                  ],
+                                  "elements": [
+                                    {
+                                      "children": [],
+                                      "name": "common-atts",
+                                      "parent": [Circular],
+                                      "position": {
+                                        "column": 16,
+                                        "line": 113,
+                                        "offset": 3266,
+                                      },
+                                      "range": {
+                                        "end": {
+                                          "column": 42,
+                                          "line": 113,
+                                          "offset": 3291,
+                                        },
+                                        "start": {
+                                          "column": 16,
+                                          "line": 113,
+                                          "offset": 3266,
+                                        },
+                                      },
+                                      "type": "ref",
+                                    },
+                                    {
+                                      "children": [],
+                                      "name": "text",
+                                      "parent": [Circular],
+                                      "position": {
+                                        "column": 16,
+                                        "line": 114,
+                                        "offset": 3309,
+                                      },
+                                      "range": {
+                                        "end": {
+                                          "column": 24,
+                                          "line": 114,
+                                          "offset": 3316,
+                                        },
+                                        "start": {
+                                          "column": 16,
+                                          "line": 114,
+                                          "offset": 3309,
+                                        },
+                                      },
+                                      "type": "text",
+                                    },
+                                  ],
+                                  "fullPath": "data/param",
+                                  "name": "param",
+                                  "parent": [Circular],
+                                  "position": {
+                                    "column": 14,
+                                    "line": 109,
+                                    "offset": 3117,
+                                  },
+                                  "properties": {
+                                    "name": "param",
+                                  },
+                                  "range": {
+                                    "end": {
+                                      "column": 24,
+                                      "line": 115,
+                                      "offset": 3341,
+                                    },
+                                    "start": {
+                                      "column": 14,
+                                      "line": 109,
+                                      "offset": 3117,
+                                    },
+                                  },
+                                  "type": "element",
+                                },
+                              ],
+                              "name": "zeroOrMore",
+                              "parent": [Circular],
+                              "position": {
+                                "column": 12,
+                                "line": 108,
+                                "offset": 3090,
+                              },
+                              "range": {
+                                "end": {
+                                  "column": 25,
+                                  "line": 116,
+                                  "offset": 3367,
+                                },
+                                "start": {
+                                  "column": 12,
+                                  "line": 108,
+                                  "offset": 3090,
+                                },
+                              },
+                              "type": "zeroOrMore",
+                            },
+                            {
+                              "children": [
+                                {
+                                  "attributes": [],
+                                  "elements": [
+                                    {
+                                      "children": [],
+                                      "name": "common-atts",
+                                      "parent": [Circular],
+                                      "position": {
+                                        "column": 16,
+                                        "line": 119,
+                                        "offset": 3446,
+                                      },
+                                      "range": {
+                                        "end": {
+                                          "column": 42,
+                                          "line": 119,
+                                          "offset": 3471,
+                                        },
+                                        "start": {
+                                          "column": 16,
+                                          "line": 119,
+                                          "offset": 3446,
+                                        },
+                                      },
+                                      "type": "ref",
+                                    },
+                                    {
+                                      "children": [],
+                                      "name": "open-patterns",
+                                      "parent": [Circular],
+                                      "position": {
+                                        "column": 16,
+                                        "line": 120,
+                                        "offset": 3489,
+                                      },
+                                      "range": {
+                                        "end": {
+                                          "column": 44,
+                                          "line": 120,
+                                          "offset": 3516,
+                                        },
+                                        "start": {
+                                          "column": 16,
+                                          "line": 120,
+                                          "offset": 3489,
+                                        },
+                                      },
+                                      "type": "ref",
+                                    },
+                                  ],
+                                  "fullPath": "data/except",
+                                  "name": "except",
+                                  "parent": [Circular],
+                                  "position": {
+                                    "column": 14,
+                                    "line": 118,
+                                    "offset": 3406,
+                                  },
+                                  "properties": {
+                                    "name": "except",
+                                  },
+                                  "range": {
+                                    "end": {
+                                      "column": 24,
+                                      "line": 121,
+                                      "offset": 3541,
+                                    },
+                                    "start": {
+                                      "column": 14,
+                                      "line": 118,
+                                      "offset": 3406,
+                                    },
+                                  },
+                                  "type": "element",
+                                },
+                              ],
+                              "name": "optional",
+                              "parent": [Circular],
+                              "position": {
+                                "column": 12,
+                                "line": 117,
+                                "offset": 3381,
+                              },
+                              "range": {
+                                "end": {
+                                  "column": 23,
+                                  "line": 122,
+                                  "offset": 3565,
+                                },
+                                "start": {
+                                  "column": 12,
+                                  "line": 117,
+                                  "offset": 3381,
+                                },
+                              },
+                              "type": "optional",
+                            },
+                          ],
+                          "name": "group",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 107,
+                            "offset": 3070,
+                          },
+                          "range": {
+                            "end": {
+                              "column": 18,
+                              "line": 123,
+                              "offset": 3584,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 107,
+                              "offset": 3070,
+                            },
+                          },
+                          "type": "group",
+                        },
+                      ],
+                      "name": "interleave",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 105,
+                        "offset": 3016,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 21,
+                          "line": 124,
+                          "offset": 3606,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 105,
+                          "offset": 3016,
+                        },
+                      },
+                      "type": "interleave",
+                    },
+                  ],
+                  "fullPath": "/data",
+                  "name": "data",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 100,
+                    "offset": 2865,
+                  },
+                  "properties": {
+                    "name": "data",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 125,
+                      "offset": 3623,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 100,
+                      "offset": 2865,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 127,
+                        "offset": 3667,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 127,
+                          "offset": 3692,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 127,
+                          "offset": 3667,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "other",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 128,
+                        "offset": 3702,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 28,
+                          "line": 128,
+                          "offset": 3721,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 128,
+                          "offset": 3702,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "fullPath": "/notAllowed",
+                  "name": "notAllowed",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 126,
+                    "offset": 3631,
+                  },
+                  "properties": {
+                    "name": "notAllowed",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 129,
+                      "offset": 3738,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 126,
+                      "offset": 3631,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [
+                    {
+                      "dataType": undefined,
+                      "fullPath": "externalRef/@href",
+                      "name": "href",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 131,
+                        "offset": 3783,
+                      },
+                      "properties": {
+                        "name": "href",
+                      },
+                      "range": {
+                        "end": {
+                          "column": 20,
+                          "line": 133,
+                          "offset": 3859,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 131,
+                          "offset": 3783,
+                        },
+                      },
+                      "type": "attribute",
+                    },
+                  ],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 134,
+                        "offset": 3869,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 134,
+                          "offset": 3894,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 134,
+                          "offset": 3869,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "other",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 135,
+                        "offset": 3904,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 28,
+                          "line": 135,
+                          "offset": 3923,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 135,
+                          "offset": 3904,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "fullPath": "/externalRef",
+                  "name": "externalRef",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 130,
+                    "offset": 3746,
+                  },
+                  "properties": {
+                    "name": "externalRef",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 136,
+                      "offset": 3940,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 130,
+                      "offset": 3746,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 138,
+                        "offset": 3981,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 138,
+                          "offset": 4006,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 138,
+                          "offset": 3981,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "grammar-content",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 139,
+                        "offset": 4016,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 38,
+                          "line": 139,
+                          "offset": 4045,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 139,
+                          "offset": 4016,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "fullPath": "/grammar",
+                  "name": "grammar",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 137,
+                    "offset": 3948,
+                  },
+                  "properties": {
+                    "name": "grammar",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 140,
+                      "offset": 4062,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 137,
+                      "offset": 3948,
+                    },
+                  },
+                  "type": "element",
+                },
+              ],
+              "name": "choice",
+              "parent": [Circular],
+              "position": {
+                "column": 4,
+                "line": 11,
+                "offset": 356,
+              },
+              "range": {
+                "end": {
+                  "column": 13,
+                  "line": 141,
+                  "offset": 4076,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 11,
+                  "offset": 356,
+                },
+              },
+              "type": "choice",
+            },
+          ],
+          "name": "pattern",
+          "parent": [Circular],
+          "position": {
+            "column": 2,
+            "line": 10,
+            "offset": 328,
+          },
+          "range": {
+            "end": {
+              "column": 11,
+              "line": 142,
+              "offset": 4088,
+            },
+            "start": {
+              "column": 2,
+              "line": 10,
+              "offset": 328,
+            },
+          },
+          "type": "define",
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [],
+                  "name": "other",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 146,
+                    "offset": 4148,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 26,
+                      "line": 146,
+                      "offset": 4167,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 146,
+                      "offset": 4148,
+                    },
+                  },
+                  "type": "ref",
+                },
+                {
+                  "children": [
+                    {
+                      "attributes": [],
+                      "elements": [
+                        {
+                          "children": [],
+                          "name": "start-element",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 149,
+                            "offset": 4215,
+                          },
+                          "range": {
+                            "end": {
+                              "column": 38,
+                              "line": 149,
+                              "offset": 4242,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 149,
+                              "offset": 4215,
+                            },
+                          },
+                          "type": "ref",
+                        },
+                        {
+                          "children": [],
+                          "name": "define-element",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 150,
+                            "offset": 4254,
+                          },
+                          "range": {
+                            "end": {
+                              "column": 39,
+                              "line": 150,
+                              "offset": 4282,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 150,
+                              "offset": 4254,
+                            },
+                          },
+                          "type": "ref",
+                        },
+                        {
+                          "attributes": [],
+                          "elements": [
+                            {
+                              "children": [],
+                              "name": "common-atts",
+                              "parent": [Circular],
+                              "position": {
+                                "column": 12,
+                                "line": 152,
+                                "offset": 4327,
+                              },
+                              "range": {
+                                "end": {
+                                  "column": 38,
+                                  "line": 152,
+                                  "offset": 4352,
+                                },
+                                "start": {
+                                  "column": 12,
+                                  "line": 152,
+                                  "offset": 4327,
+                                },
+                              },
+                              "type": "ref",
+                            },
+                            {
+                              "children": [],
+                              "name": "grammar-content",
+                              "parent": [Circular],
+                              "position": {
+                                "column": 12,
+                                "line": 153,
+                                "offset": 4366,
+                              },
+                              "range": {
+                                "end": {
+                                  "column": 42,
+                                  "line": 153,
+                                  "offset": 4395,
+                                },
+                                "start": {
+                                  "column": 12,
+                                  "line": 153,
+                                  "offset": 4366,
+                                },
+                              },
+                              "type": "ref",
+                            },
+                          ],
+                          "fullPath": "/div",
+                          "name": "div",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 151,
+                            "offset": 4294,
+                          },
+                          "properties": {
+                            "name": "div",
+                          },
+                          "range": {
+                            "end": {
+                              "column": 20,
+                              "line": 154,
+                              "offset": 4416,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 151,
+                              "offset": 4294,
+                            },
+                          },
+                          "type": "element",
+                        },
+                        {
+                          "attributes": [
+                            {
+                              "dataType": undefined,
+                              "fullPath": "include/@href",
+                              "name": "href",
+                              "parent": [Circular],
+                              "position": {
+                                "column": 12,
+                                "line": 156,
+                                "offset": 4465,
+                              },
+                              "properties": {
+                                "name": "href",
+                              },
+                              "range": {
+                                "end": {
+                                  "column": 24,
+                                  "line": 158,
+                                  "offset": 4549,
+                                },
+                                "start": {
+                                  "column": 12,
+                                  "line": 156,
+                                  "offset": 4465,
+                                },
+                              },
+                              "type": "attribute",
+                            },
+                          ],
+                          "elements": [
+                            {
+                              "children": [],
+                              "name": "common-atts",
+                              "parent": [Circular],
+                              "position": {
+                                "column": 12,
+                                "line": 159,
+                                "offset": 4563,
+                              },
+                              "range": {
+                                "end": {
+                                  "column": 38,
+                                  "line": 159,
+                                  "offset": 4588,
+                                },
+                                "start": {
+                                  "column": 12,
+                                  "line": 159,
+                                  "offset": 4563,
+                                },
+                              },
+                              "type": "ref",
+                            },
+                            {
+                              "children": [],
+                              "name": "include-content",
+                              "parent": [Circular],
+                              "position": {
+                                "column": 12,
+                                "line": 160,
+                                "offset": 4602,
+                              },
+                              "range": {
+                                "end": {
+                                  "column": 42,
+                                  "line": 160,
+                                  "offset": 4631,
+                                },
+                                "start": {
+                                  "column": 12,
+                                  "line": 160,
+                                  "offset": 4602,
+                                },
+                              },
+                              "type": "ref",
+                            },
+                          ],
+                          "fullPath": "/include",
+                          "name": "include",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 155,
+                            "offset": 4428,
+                          },
+                          "properties": {
+                            "name": "include",
+                          },
+                          "range": {
+                            "end": {
+                              "column": 20,
+                              "line": 161,
+                              "offset": 4652,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 155,
+                              "offset": 4428,
+                            },
+                          },
+                          "type": "element",
+                        },
+                      ],
+                      "name": "choice",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 148,
+                        "offset": 4196,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 17,
+                          "line": 162,
+                          "offset": 4670,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 148,
+                          "offset": 4196,
+                        },
+                      },
+                      "type": "choice",
+                    },
+                  ],
+                  "name": "zeroOrMore",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 147,
+                    "offset": 4175,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 19,
+                      "line": 163,
+                      "offset": 4690,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 147,
+                      "offset": 4175,
+                    },
+                  },
+                  "type": "zeroOrMore",
+                },
+              ],
+              "name": "interleave",
+              "parent": [Circular],
+              "position": {
+                "column": 4,
+                "line": 145,
+                "offset": 4129,
+              },
+              "range": {
+                "end": {
+                  "column": 17,
+                  "line": 164,
+                  "offset": 4708,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 145,
+                  "offset": 4129,
+                },
+              },
+              "type": "interleave",
+            },
+          ],
+          "name": "grammar-content",
+          "parent": [Circular],
+          "position": {
+            "column": 2,
+            "line": 144,
+            "offset": 4093,
+          },
+          "range": {
+            "end": {
+              "column": 11,
+              "line": 165,
+              "offset": 4720,
+            },
+            "start": {
+              "column": 2,
+              "line": 144,
+              "offset": 4093,
+            },
+          },
+          "type": "define",
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [],
+                  "name": "other",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 169,
+                    "offset": 4780,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 26,
+                      "line": 169,
+                      "offset": 4799,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 169,
+                      "offset": 4780,
+                    },
+                  },
+                  "type": "ref",
+                },
+                {
+                  "children": [
+                    {
+                      "attributes": [],
+                      "elements": [
+                        {
+                          "children": [],
+                          "name": "start-element",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 172,
+                            "offset": 4847,
+                          },
+                          "range": {
+                            "end": {
+                              "column": 38,
+                              "line": 172,
+                              "offset": 4874,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 172,
+                              "offset": 4847,
+                            },
+                          },
+                          "type": "ref",
+                        },
+                        {
+                          "children": [],
+                          "name": "define-element",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 173,
+                            "offset": 4886,
+                          },
+                          "range": {
+                            "end": {
+                              "column": 39,
+                              "line": 173,
+                              "offset": 4914,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 173,
+                              "offset": 4886,
+                            },
+                          },
+                          "type": "ref",
+                        },
+                        {
+                          "attributes": [],
+                          "elements": [
+                            {
+                              "children": [],
+                              "name": "common-atts",
+                              "parent": [Circular],
+                              "position": {
+                                "column": 12,
+                                "line": 175,
+                                "offset": 4959,
+                              },
+                              "range": {
+                                "end": {
+                                  "column": 38,
+                                  "line": 175,
+                                  "offset": 4984,
+                                },
+                                "start": {
+                                  "column": 12,
+                                  "line": 175,
+                                  "offset": 4959,
+                                },
+                              },
+                              "type": "ref",
+                            },
+                            {
+                              "children": [],
+                              "name": "include-content",
+                              "parent": [Circular],
+                              "position": {
+                                "column": 12,
+                                "line": 176,
+                                "offset": 4998,
+                              },
+                              "range": {
+                                "end": {
+                                  "column": 42,
+                                  "line": 176,
+                                  "offset": 5027,
+                                },
+                                "start": {
+                                  "column": 12,
+                                  "line": 176,
+                                  "offset": 4998,
+                                },
+                              },
+                              "type": "ref",
+                            },
+                          ],
+                          "fullPath": "/div",
+                          "name": "div",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 174,
+                            "offset": 4926,
+                          },
+                          "properties": {
+                            "name": "div",
+                          },
+                          "range": {
+                            "end": {
+                              "column": 20,
+                              "line": 177,
+                              "offset": 5048,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 174,
+                              "offset": 4926,
+                            },
+                          },
+                          "type": "element",
+                        },
+                      ],
+                      "name": "choice",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 171,
+                        "offset": 4828,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 17,
+                          "line": 178,
+                          "offset": 5066,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 171,
+                          "offset": 4828,
+                        },
+                      },
+                      "type": "choice",
+                    },
+                  ],
+                  "name": "zeroOrMore",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 170,
+                    "offset": 4807,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 19,
+                      "line": 179,
+                      "offset": 5086,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 170,
+                      "offset": 4807,
+                    },
+                  },
+                  "type": "zeroOrMore",
+                },
+              ],
+              "name": "interleave",
+              "parent": [Circular],
+              "position": {
+                "column": 4,
+                "line": 168,
+                "offset": 4761,
+              },
+              "range": {
+                "end": {
+                  "column": 17,
+                  "line": 180,
+                  "offset": 5104,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 168,
+                  "offset": 4761,
+                },
+              },
+              "type": "interleave",
+            },
+          ],
+          "name": "include-content",
+          "parent": [Circular],
+          "position": {
+            "column": 2,
+            "line": 167,
+            "offset": 4725,
+          },
+          "range": {
+            "end": {
+              "column": 11,
+              "line": 181,
+              "offset": 5116,
+            },
+            "start": {
+              "column": 2,
+              "line": 167,
+              "offset": 4725,
+            },
+          },
+          "type": "define",
+        },
+        {
+          "children": [
+            {
+              "attributes": [],
+              "elements": [
+                {
+                  "children": [],
+                  "name": "combine-att",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 185,
+                    "offset": 5184,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 32,
+                      "line": 185,
+                      "offset": 5209,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 185,
+                      "offset": 5184,
+                    },
+                  },
+                  "type": "ref",
+                },
+                {
+                  "children": [],
+                  "name": "common-atts",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 186,
+                    "offset": 5217,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 32,
+                      "line": 186,
+                      "offset": 5242,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 186,
+                      "offset": 5217,
+                    },
+                  },
+                  "type": "ref",
+                },
+                {
+                  "children": [],
+                  "name": "open-pattern",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 187,
+                    "offset": 5250,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 33,
+                      "line": 187,
+                      "offset": 5276,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 187,
+                      "offset": 5250,
+                    },
+                  },
+                  "type": "ref",
+                },
+              ],
+              "fullPath": "/start",
+              "name": "start",
+              "parent": [Circular],
+              "position": {
+                "column": 4,
+                "line": 184,
+                "offset": 5155,
+              },
+              "properties": {
+                "name": "start",
+              },
+              "range": {
+                "end": {
+                  "column": 14,
+                  "line": 188,
+                  "offset": 5291,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 184,
+                  "offset": 5155,
+                },
+              },
+              "type": "element",
+            },
+          ],
+          "name": "start-element",
+          "parent": [Circular],
+          "position": {
+            "column": 2,
+            "line": 183,
+            "offset": 5121,
+          },
+          "range": {
+            "end": {
+              "column": 11,
+              "line": 189,
+              "offset": 5303,
+            },
+            "start": {
+              "column": 2,
+              "line": 183,
+              "offset": 5121,
+            },
+          },
+          "type": "define",
+        },
+        {
+          "children": [
+            {
+              "attributes": [
+                {
+                  "dataType": undefined,
+                  "fullPath": "define/@name",
+                  "name": "name",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 193,
+                    "offset": 5373,
+                  },
+                  "properties": {
+                    "name": "name",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 18,
+                      "line": 195,
+                      "offset": 5445,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 193,
+                      "offset": 5373,
+                    },
+                  },
+                  "type": "attribute",
+                },
+              ],
+              "elements": [
+                {
+                  "children": [],
+                  "name": "combine-att",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 196,
+                    "offset": 5453,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 32,
+                      "line": 196,
+                      "offset": 5478,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 196,
+                      "offset": 5453,
+                    },
+                  },
+                  "type": "ref",
+                },
+                {
+                  "children": [],
+                  "name": "common-atts",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 197,
+                    "offset": 5486,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 32,
+                      "line": 197,
+                      "offset": 5511,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 197,
+                      "offset": 5486,
+                    },
+                  },
+                  "type": "ref",
+                },
+                {
+                  "children": [],
+                  "name": "open-patterns",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 198,
+                    "offset": 5519,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 34,
+                      "line": 198,
+                      "offset": 5546,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 198,
+                      "offset": 5519,
+                    },
+                  },
+                  "type": "ref",
+                },
+              ],
+              "fullPath": "/define",
+              "name": "define",
+              "parent": [Circular],
+              "position": {
+                "column": 4,
+                "line": 192,
+                "offset": 5343,
+              },
+              "properties": {
+                "name": "define",
+              },
+              "range": {
+                "end": {
+                  "column": 14,
+                  "line": 199,
+                  "offset": 5561,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 192,
+                  "offset": 5343,
+                },
+              },
+              "type": "element",
+            },
+          ],
+          "name": "define-element",
+          "parent": [Circular],
+          "position": {
+            "column": 2,
+            "line": 191,
+            "offset": 5308,
+          },
+          "range": {
+            "end": {
+              "column": 11,
+              "line": 200,
+              "offset": 5573,
+            },
+            "start": {
+              "column": 2,
+              "line": 191,
+              "offset": 5308,
+            },
+          },
+          "type": "define",
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "dataType": undefined,
+                  "fullPath": "/@combine",
+                  "name": "combine",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 204,
+                    "offset": 5627,
+                  },
+                  "properties": {
+                    "name": "combine",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 18,
+                      "line": 209,
+                      "offset": 5774,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 204,
+                      "offset": 5627,
+                    },
+                  },
+                  "type": "attribute",
+                },
+              ],
+              "name": "optional",
+              "parent": [Circular],
+              "position": {
+                "column": 4,
+                "line": 203,
+                "offset": 5610,
+              },
+              "range": {
+                "end": {
+                  "column": 15,
+                  "line": 210,
+                  "offset": 5790,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 203,
+                  "offset": 5610,
+                },
+              },
+              "type": "optional",
+            },
+          ],
+          "name": "combine-att",
+          "parent": [Circular],
+          "position": {
+            "column": 2,
+            "line": 202,
+            "offset": 5578,
+          },
+          "range": {
+            "end": {
+              "column": 11,
+              "line": 211,
+              "offset": 5802,
+            },
+            "start": {
+              "column": 2,
+              "line": 202,
+              "offset": 5578,
+            },
+          },
+          "type": "define",
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [],
+                  "name": "other",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 215,
+                    "offset": 5860,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 26,
+                      "line": 215,
+                      "offset": 5879,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 215,
+                      "offset": 5860,
+                    },
+                  },
+                  "type": "ref",
+                },
+                {
+                  "children": [
+                    {
+                      "children": [],
+                      "name": "pattern",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 217,
+                        "offset": 5907,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 30,
+                          "line": 217,
+                          "offset": 5928,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 217,
+                          "offset": 5907,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "name": "oneOrMore",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 216,
+                    "offset": 5887,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 18,
+                      "line": 218,
+                      "offset": 5947,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 216,
+                      "offset": 5887,
+                    },
+                  },
+                  "type": "oneOrMore",
+                },
+              ],
+              "name": "interleave",
+              "parent": [Circular],
+              "position": {
+                "column": 4,
+                "line": 214,
+                "offset": 5841,
+              },
+              "range": {
+                "end": {
+                  "column": 17,
+                  "line": 219,
+                  "offset": 5965,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 214,
+                  "offset": 5841,
+                },
+              },
+              "type": "interleave",
+            },
+          ],
+          "name": "open-patterns",
+          "parent": [Circular],
+          "position": {
+            "column": 2,
+            "line": 213,
+            "offset": 5807,
+          },
+          "range": {
+            "end": {
+              "column": 11,
+              "line": 220,
+              "offset": 5977,
+            },
+            "start": {
+              "column": 2,
+              "line": 213,
+              "offset": 5807,
+            },
+          },
+          "type": "define",
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [],
+                  "name": "other",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 224,
+                    "offset": 6034,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 26,
+                      "line": 224,
+                      "offset": 6053,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 224,
+                      "offset": 6034,
+                    },
+                  },
+                  "type": "ref",
+                },
+                {
+                  "children": [],
+                  "name": "pattern",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 225,
+                    "offset": 6061,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 28,
+                      "line": 225,
+                      "offset": 6082,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 225,
+                      "offset": 6061,
+                    },
+                  },
+                  "type": "ref",
+                },
+              ],
+              "name": "interleave",
+              "parent": [Circular],
+              "position": {
+                "column": 4,
+                "line": 223,
+                "offset": 6015,
+              },
+              "range": {
+                "end": {
+                  "column": 17,
+                  "line": 226,
+                  "offset": 6100,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 223,
+                  "offset": 6015,
+                },
+              },
+              "type": "interleave",
+            },
+          ],
+          "name": "open-pattern",
+          "parent": [Circular],
+          "position": {
+            "column": 2,
+            "line": 222,
+            "offset": 5982,
+          },
+          "range": {
+            "end": {
+              "column": 11,
+              "line": 227,
+              "offset": 6112,
+            },
+            "start": {
+              "column": 2,
+              "line": 222,
+              "offset": 5982,
+            },
+          },
+          "type": "define",
+        },
+        {
+          "children": [
+            {
+              "attributes": [],
+              "elements": [
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 232,
+                        "offset": 6193,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 232,
+                          "offset": 6218,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 232,
+                          "offset": 6193,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "data",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 233,
+                        "offset": 6228,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 29,
+                          "line": 233,
+                          "offset": 6248,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 233,
+                          "offset": 6228,
+                        },
+                      },
+                      "type": "data",
+                    },
+                  ],
+                  "fullPath": "/name",
+                  "name": "name",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 231,
+                    "offset": 6163,
+                  },
+                  "properties": {
+                    "name": "name",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 234,
+                      "offset": 6265,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 231,
+                      "offset": 6163,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 236,
+                        "offset": 6306,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 236,
+                          "offset": 6331,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 236,
+                          "offset": 6306,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "except-name-class",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 237,
+                        "offset": 6341,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 40,
+                          "line": 237,
+                          "offset": 6372,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 237,
+                          "offset": 6341,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "fullPath": "/anyName",
+                  "name": "anyName",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 235,
+                    "offset": 6273,
+                  },
+                  "properties": {
+                    "name": "anyName",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 238,
+                      "offset": 6389,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 235,
+                      "offset": 6273,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 240,
+                        "offset": 6429,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 240,
+                          "offset": 6454,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 240,
+                          "offset": 6429,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "except-name-class",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 241,
+                        "offset": 6464,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 40,
+                          "line": 241,
+                          "offset": 6495,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 241,
+                          "offset": 6464,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "fullPath": "/nsName",
+                  "name": "nsName",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 239,
+                    "offset": 6397,
+                  },
+                  "properties": {
+                    "name": "nsName",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 242,
+                      "offset": 6512,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 239,
+                      "offset": 6397,
+                    },
+                  },
+                  "type": "element",
+                },
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "children": [],
+                      "name": "common-atts",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 244,
+                        "offset": 6552,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 34,
+                          "line": 244,
+                          "offset": 6577,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 244,
+                          "offset": 6552,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                    {
+                      "children": [],
+                      "name": "open-name-classes",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 245,
+                        "offset": 6587,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 40,
+                          "line": 245,
+                          "offset": 6618,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 245,
+                          "offset": 6587,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "fullPath": "/choice",
+                  "name": "choice",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 243,
+                    "offset": 6520,
+                  },
+                  "properties": {
+                    "name": "choice",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 246,
+                      "offset": 6635,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 243,
+                      "offset": 6520,
+                    },
+                  },
+                  "type": "element",
+                },
+              ],
+              "name": "choice",
+              "parent": [Circular],
+              "position": {
+                "column": 4,
+                "line": 230,
+                "offset": 6148,
+              },
+              "range": {
+                "end": {
+                  "column": 13,
+                  "line": 247,
+                  "offset": 6649,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 230,
+                  "offset": 6148,
+                },
+              },
+              "type": "choice",
+            },
+          ],
+          "name": "name-class",
+          "parent": [Circular],
+          "position": {
+            "column": 2,
+            "line": 229,
+            "offset": 6117,
+          },
+          "range": {
+            "end": {
+              "column": 11,
+              "line": 248,
+              "offset": 6661,
+            },
+            "start": {
+              "column": 2,
+              "line": 229,
+              "offset": 6117,
+            },
+          },
+          "type": "define",
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [],
+                  "name": "other",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 252,
+                    "offset": 6723,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 26,
+                      "line": 252,
+                      "offset": 6742,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 252,
+                      "offset": 6723,
+                    },
+                  },
+                  "type": "ref",
+                },
+                {
+                  "children": [
+                    {
+                      "attributes": [],
+                      "elements": [
+                        {
+                          "children": [],
+                          "name": "open-name-classes",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 255,
+                            "offset": 6803,
+                          },
+                          "range": {
+                            "end": {
+                              "column": 42,
+                              "line": 255,
+                              "offset": 6834,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 255,
+                              "offset": 6803,
+                            },
+                          },
+                          "type": "ref",
+                        },
+                      ],
+                      "fullPath": "/except",
+                      "name": "except",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 254,
+                        "offset": 6769,
+                      },
+                      "properties": {
+                        "name": "except",
+                      },
+                      "range": {
+                        "end": {
+                          "column": 18,
+                          "line": 256,
+                          "offset": 6853,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 254,
+                          "offset": 6769,
+                        },
+                      },
+                      "type": "element",
+                    },
+                  ],
+                  "name": "optional",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 253,
+                    "offset": 6750,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 17,
+                      "line": 257,
+                      "offset": 6871,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 253,
+                      "offset": 6750,
+                    },
+                  },
+                  "type": "optional",
+                },
+              ],
+              "name": "interleave",
+              "parent": [Circular],
+              "position": {
+                "column": 4,
+                "line": 251,
+                "offset": 6704,
+              },
+              "range": {
+                "end": {
+                  "column": 17,
+                  "line": 258,
+                  "offset": 6889,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 251,
+                  "offset": 6704,
+                },
+              },
+              "type": "interleave",
+            },
+          ],
+          "name": "except-name-class",
+          "parent": [Circular],
+          "position": {
+            "column": 2,
+            "line": 250,
+            "offset": 6666,
+          },
+          "range": {
+            "end": {
+              "column": 11,
+              "line": 259,
+              "offset": 6901,
+            },
+            "start": {
+              "column": 2,
+              "line": 250,
+              "offset": 6666,
+            },
+          },
+          "type": "define",
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [],
+                  "name": "other",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 263,
+                    "offset": 6963,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 26,
+                      "line": 263,
+                      "offset": 6982,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 263,
+                      "offset": 6963,
+                    },
+                  },
+                  "type": "ref",
+                },
+                {
+                  "children": [
+                    {
+                      "children": [],
+                      "name": "name-class",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 265,
+                        "offset": 7010,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 33,
+                          "line": 265,
+                          "offset": 7034,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 265,
+                          "offset": 7010,
+                        },
+                      },
+                      "type": "ref",
+                    },
+                  ],
+                  "name": "oneOrMore",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 264,
+                    "offset": 6990,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 18,
+                      "line": 266,
+                      "offset": 7053,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 264,
+                      "offset": 6990,
+                    },
+                  },
+                  "type": "oneOrMore",
+                },
+              ],
+              "name": "interleave",
+              "parent": [Circular],
+              "position": {
+                "column": 4,
+                "line": 262,
+                "offset": 6944,
+              },
+              "range": {
+                "end": {
+                  "column": 17,
+                  "line": 267,
+                  "offset": 7071,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 262,
+                  "offset": 6944,
+                },
+              },
+              "type": "interleave",
+            },
+          ],
+          "name": "open-name-classes",
+          "parent": [Circular],
+          "position": {
+            "column": 2,
+            "line": 261,
+            "offset": 6906,
+          },
+          "range": {
+            "end": {
+              "column": 11,
+              "line": 268,
+              "offset": 7083,
+            },
+            "start": {
+              "column": 2,
+              "line": 261,
+              "offset": 6906,
+            },
+          },
+          "type": "define",
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [],
+                  "name": "other",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 272,
+                    "offset": 7143,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 26,
+                      "line": 272,
+                      "offset": 7162,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 272,
+                      "offset": 7143,
+                    },
+                  },
+                  "type": "ref",
+                },
+                {
+                  "children": [],
+                  "name": "name-class",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 273,
+                    "offset": 7170,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 31,
+                      "line": 273,
+                      "offset": 7194,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 273,
+                      "offset": 7170,
+                    },
+                  },
+                  "type": "ref",
+                },
+              ],
+              "name": "interleave",
+              "parent": [Circular],
+              "position": {
+                "column": 4,
+                "line": 271,
+                "offset": 7124,
+              },
+              "range": {
+                "end": {
+                  "column": 17,
+                  "line": 274,
+                  "offset": 7212,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 271,
+                  "offset": 7124,
+                },
+              },
+              "type": "interleave",
+            },
+          ],
+          "name": "open-name-class",
+          "parent": [Circular],
+          "position": {
+            "column": 2,
+            "line": 270,
+            "offset": 7088,
+          },
+          "range": {
+            "end": {
+              "column": 11,
+              "line": 275,
+              "offset": 7224,
+            },
+            "start": {
+              "column": 2,
+              "line": 270,
+              "offset": 7088,
+            },
+          },
+          "type": "define",
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "dataType": undefined,
+                  "fullPath": "/@ns",
+                  "name": "ns",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 279,
+                    "offset": 7278,
+                  },
+                  "properties": {
+                    "name": "ns",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 29,
+                      "line": 279,
+                      "offset": 7300,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 279,
+                      "offset": 7278,
+                    },
+                  },
+                  "type": "attribute",
+                },
+              ],
+              "name": "optional",
+              "parent": [Circular],
+              "position": {
+                "column": 4,
+                "line": 278,
+                "offset": 7261,
+              },
+              "range": {
+                "end": {
+                  "column": 15,
+                  "line": 280,
+                  "offset": 7316,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 278,
+                  "offset": 7261,
+                },
+              },
+              "type": "optional",
+            },
+            {
+              "children": [
+                {
+                  "dataType": undefined,
+                  "fullPath": "/@datatypeLibrary",
+                  "name": "datatypeLibrary",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 282,
+                    "offset": 7339,
+                  },
+                  "properties": {
+                    "name": "datatypeLibrary",
+                  },
+                  "range": {
+                    "end": {
+                      "column": 18,
+                      "line": 284,
+                      "offset": 7422,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 282,
+                      "offset": 7339,
+                    },
+                  },
+                  "type": "attribute",
+                },
+              ],
+              "name": "optional",
+              "parent": [Circular],
+              "position": {
+                "column": 4,
+                "line": 281,
+                "offset": 7322,
+              },
+              "range": {
+                "end": {
+                  "column": 15,
+                  "line": 285,
+                  "offset": 7438,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 281,
+                  "offset": 7322,
+                },
+              },
+              "type": "optional",
+            },
+            {
+              "children": [
+                {
+                  "dataType": undefined,
+                  "fullPath": "/@undefined",
+                  "name": "attribute",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 287,
+                    "offset": 7463,
+                  },
+                  "properties": {},
+                  "range": {
+                    "end": {
+                      "column": 18,
+                      "line": 294,
+                      "offset": 7620,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 287,
+                      "offset": 7463,
+                    },
+                  },
+                  "type": "attribute",
+                },
+              ],
+              "name": "zeroOrMore",
+              "parent": [Circular],
+              "position": {
+                "column": 4,
+                "line": 286,
+                "offset": 7444,
+              },
+              "range": {
+                "end": {
+                  "column": 17,
+                  "line": 295,
+                  "offset": 7638,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 286,
+                  "offset": 7444,
+                },
+              },
+              "type": "zeroOrMore",
+            },
+          ],
+          "name": "common-atts",
+          "parent": [Circular],
+          "position": {
+            "column": 2,
+            "line": 277,
+            "offset": 7229,
+          },
+          "range": {
+            "end": {
+              "column": 11,
+              "line": 296,
+              "offset": 7650,
+            },
+            "start": {
+              "column": 2,
+              "line": 277,
+              "offset": 7229,
+            },
+          },
+          "type": "define",
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "attributes": [],
+                  "elements": [
+                    {
+                      "children": [
+                        {
+                          "attributes": [
+                            {
+                              "dataType": undefined,
+                              "fullPath": "element/@undefined",
+                              "name": "attribute",
+                              "parent": [Circular],
+                              "position": {
+                                "column": 12,
+                                "line": 308,
+                                "offset": 7861,
+                              },
+                              "properties": {},
+                              "range": {
+                                "end": {
+                                  "column": 24,
+                                  "line": 310,
+                                  "offset": 7922,
+                                },
+                                "start": {
+                                  "column": 12,
+                                  "line": 308,
+                                  "offset": 7861,
+                                },
+                              },
+                              "type": "attribute",
+                            },
+                          ],
+                          "elements": [
+                            {
+                              "children": [],
+                              "name": "text",
+                              "parent": [Circular],
+                              "position": {
+                                "column": 12,
+                                "line": 311,
+                                "offset": 7936,
+                              },
+                              "range": {
+                                "end": {
+                                  "column": 20,
+                                  "line": 311,
+                                  "offset": 7943,
+                                },
+                                "start": {
+                                  "column": 12,
+                                  "line": 311,
+                                  "offset": 7936,
+                                },
+                              },
+                              "type": "text",
+                            },
+                            {
+                              "children": [],
+                              "name": "any",
+                              "parent": [Circular],
+                              "position": {
+                                "column": 12,
+                                "line": 312,
+                                "offset": 7957,
+                              },
+                              "range": {
+                                "end": {
+                                  "column": 30,
+                                  "line": 312,
+                                  "offset": 7974,
+                                },
+                                "start": {
+                                  "column": 12,
+                                  "line": 312,
+                                  "offset": 7957,
+                                },
+                              },
+                              "type": "ref",
+                            },
+                          ],
+                          "name": "choice",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 307,
+                            "offset": 7840,
+                          },
+                          "range": {
+                            "end": {
+                              "column": 19,
+                              "line": 313,
+                              "offset": 7994,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 307,
+                              "offset": 7840,
+                            },
+                          },
+                          "type": "choice",
+                        },
+                      ],
+                      "name": "zeroOrMore",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 306,
+                        "offset": 7817,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 21,
+                          "line": 314,
+                          "offset": 8016,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 306,
+                          "offset": 7817,
+                        },
+                      },
+                      "type": "zeroOrMore",
+                    },
+                  ],
+                  "fullPath": "/undefined",
+                  "name": "element",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 300,
+                    "offset": 7700,
+                  },
+                  "properties": {},
+                  "range": {
+                    "end": {
+                      "column": 16,
+                      "line": 315,
+                      "offset": 8033,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 300,
+                      "offset": 7700,
+                    },
+                  },
+                  "type": "element",
+                },
+              ],
+              "name": "zeroOrMore",
+              "parent": [Circular],
+              "position": {
+                "column": 4,
+                "line": 299,
+                "offset": 7681,
+              },
+              "range": {
+                "end": {
+                  "column": 17,
+                  "line": 316,
+                  "offset": 8051,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 299,
+                  "offset": 7681,
+                },
+              },
+              "type": "zeroOrMore",
+            },
+          ],
+          "name": "other",
+          "parent": [Circular],
+          "position": {
+            "column": 2,
+            "line": 298,
+            "offset": 7655,
+          },
+          "range": {
+            "end": {
+              "column": 11,
+              "line": 317,
+              "offset": 8063,
+            },
+            "start": {
+              "column": 2,
+              "line": 298,
+              "offset": 7655,
+            },
+          },
+          "type": "define",
+        },
+        {
+          "children": [
+            {
+              "attributes": [],
+              "elements": [
+                {
+                  "children": [
+                    {
+                      "attributes": [
+                        {
+                          "dataType": undefined,
+                          "fullPath": "element/@undefined",
+                          "name": "attribute",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 324,
+                            "offset": 8166,
+                          },
+                          "properties": {},
+                          "range": {
+                            "end": {
+                              "column": 22,
+                              "line": 326,
+                              "offset": 8223,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 324,
+                              "offset": 8166,
+                            },
+                          },
+                          "type": "attribute",
+                        },
+                      ],
+                      "elements": [
+                        {
+                          "children": [],
+                          "name": "text",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 327,
+                            "offset": 8235,
+                          },
+                          "range": {
+                            "end": {
+                              "column": 18,
+                              "line": 327,
+                              "offset": 8242,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 327,
+                              "offset": 8235,
+                            },
+                          },
+                          "type": "text",
+                        },
+                        {
+                          "children": [],
+                          "name": "any",
+                          "parent": [Circular],
+                          "position": {
+                            "column": 10,
+                            "line": 328,
+                            "offset": 8254,
+                          },
+                          "range": {
+                            "end": {
+                              "column": 28,
+                              "line": 328,
+                              "offset": 8271,
+                            },
+                            "start": {
+                              "column": 10,
+                              "line": 328,
+                              "offset": 8254,
+                            },
+                          },
+                          "type": "ref",
+                        },
+                      ],
+                      "name": "choice",
+                      "parent": [Circular],
+                      "position": {
+                        "column": 8,
+                        "line": 323,
+                        "offset": 8147,
+                      },
+                      "range": {
+                        "end": {
+                          "column": 17,
+                          "line": 329,
+                          "offset": 8289,
+                        },
+                        "start": {
+                          "column": 8,
+                          "line": 323,
+                          "offset": 8147,
+                        },
+                      },
+                      "type": "choice",
+                    },
+                  ],
+                  "name": "zeroOrMore",
+                  "parent": [Circular],
+                  "position": {
+                    "column": 6,
+                    "line": 322,
+                    "offset": 8126,
+                  },
+                  "range": {
+                    "end": {
+                      "column": 19,
+                      "line": 330,
+                      "offset": 8309,
+                    },
+                    "start": {
+                      "column": 6,
+                      "line": 322,
+                      "offset": 8126,
+                    },
+                  },
+                  "type": "zeroOrMore",
+                },
+              ],
+              "fullPath": "/undefined",
+              "name": "element",
+              "parent": [Circular],
+              "position": {
+                "column": 4,
+                "line": 320,
+                "offset": 8092,
+              },
+              "properties": {},
+              "range": {
+                "end": {
+                  "column": 14,
+                  "line": 331,
+                  "offset": 8324,
+                },
+                "start": {
+                  "column": 4,
+                  "line": 320,
+                  "offset": 8092,
+                },
+              },
+              "type": "element",
+            },
+          ],
+          "name": "any",
+          "parent": [Circular],
+          "position": {
+            "column": 2,
+            "line": 319,
+            "offset": 8068,
+          },
+          "range": {
+            "end": {
+              "column": 11,
+              "line": 332,
+              "offset": 8336,
+            },
+            "start": {
+              "column": 2,
+              "line": 319,
+              "offset": 8068,
+            },
+          },
+          "type": "define",
+        },
+      ],
+      "name": "grammar",
+      "parent": [Circular],
+      "range": {
+        "end": {
+          "column": 10,
+          "line": 334,
+          "offset": 8348,
+        },
+        "start": {
+          "column": 0,
+          "line": 3,
+          "offset": 117,
+        },
+      },
+      "type": "grammar",
+    },
+  ],
+}
+`;
+
 exports[`RelaxNG Parser Test files parser Parse simple-file.rng.xml without errors 1`] = `
 {
   "elements": [

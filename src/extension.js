@@ -30,6 +30,15 @@ exports.activate = function activate(context) {
         getTreeItem: e => currentTreeViewProvider?.getTreeItem(e),
     };
 
+    async function ensureTreeViewProviderExists() {
+        if (treeView.visible) return;
+        const children = treeViewProvider.getChildren();
+        for (const child of children) {
+            await treeView.reveal(child, { select: false, focus: false, expand: false });
+            return;
+        }
+    }
+
     const treeView = vscode.window.createTreeView("relaxng-outline.relaxNGOutline", {
         treeDataProvider: treeViewProvider,
         showCollapseAll: true,
@@ -115,21 +124,22 @@ exports.activate = function activate(context) {
     });
 
     context.subscriptions.push(
-        vscode.window.onDidChangeTextEditorSelection(event => {
+        vscode.window.onDidChangeTextEditorSelection(async event => {
             if (!followCursor) return;
-            revealNodeAtCursorForEditor(event.textEditor, false, true);
+            await revealNodeAtCursorForEditor(event.textEditor, false, true);
         })
     );
 
-    function revealNodeAtCursorForEditor(textEditor, focus, skipIfInvisible) {
+    async function revealNodeAtCursorForEditor(textEditor, focus, skipIfInvisible) {
         if (textEditor?.document?.uri.toString() !== currentDocumentUri?.toString()) return;
         if (skipIfInvisible && !(treeView?.visible ?? false)) return;
+        await ensureTreeViewProviderExists();
         const position = textEditor.selections[0]?.active;
         const offset = textEditor.document.offsetAt(position);
         if (position) {
             const node = currentTreeViewProvider?.getNodeForOffset(offset);
             if (node) {
-                treeView.reveal(node, { select: true, focus: focus });
+                await treeView.reveal(node, { select: true, focus: focus });
             }
         }
     }
@@ -195,6 +205,7 @@ class DocumentTreeViewProvider {
         if (rngNode.type == "choice") return [...(rngNode.attributes ?? []), ...(rngNode.elements ?? [])];
         if (rngNode.type == "attribute") return [rngNode.dataType];
         if (rngNode.type == "type") return rngNode.constraints;
+        return rngNode.children ?? [];
     }
 
     getTreeItem(rngNode) {
@@ -282,10 +293,35 @@ class DocumentTreeViewProvider {
         }
         return {
             label: rngNode.name,
-            collapsibleState: vscode.TreeItemCollapsibleState.Expanded,
+            description: rngNode.name != rngNode.type ? rngNode.type : "",
+            collapsibleState: rngNode.children?.length > 0 ? vscode.TreeItemCollapsibleState.Expanded : vscode.TreeItemCollapsibleState.None,
             contextValue: "relaxng-outline.rngNode",
+            iconPath: new vscode.ThemeIcon(rngNodeTypeIcons[rngNode.type] ?? "code")
         };
     }
 }
 
 exports.deactivate = () => {};
+
+const rngNodeTypeIcons = {
+    "group": "code",
+    "interleave": "code",
+    "optional": "code",
+    "zeroOrMore": "code",
+    "oneOrMore": "plus",
+    "list": "checklist",
+    "mixed": "symbol-misc",
+    "ref": "symbol-reference",
+    "parentRef": "references",
+    "empty": "remove-close",
+    "text": "symbol-string",
+    "value": "symbol-constant",
+    "data": "symbol-constant",
+    "notAllowed": "remove-close",
+    "externalRef": "symbol-reference",
+    "grammar": "symbol-class",
+    "define": "symbol-class",
+    "div": "code",
+    "include": "symbol-reference",
+    "start": "target",
+};
