@@ -13,7 +13,7 @@
 		"url": "https://github.com/tihonove/vscode-relaxng-outline.git"
 	},
 	"extensionKind": [
-		"ui"
+		"workspace"
 	],
 	"categories": [
 		"Visualization"
